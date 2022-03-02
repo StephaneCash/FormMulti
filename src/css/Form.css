@@ -1,3 +1,30 @@
-.form4 input[typr='text']{
-    border: 2px solid red;
+.camera{
+    position: relative;
 }
+
+.result{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #222;
+    transition: 0.4s;
+}
+
+.result .hasPhoto{
+    left: 0;
+}
+
+video{
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    height: 30vh;
+}
+
+.btn{
+    
+}
+

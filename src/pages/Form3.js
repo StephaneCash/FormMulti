@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react'
-import { Button, TextField, Card} from "@material-ui/core";
+import React, { useContext, useState, useRef, useEffect } from 'react'
+import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
 import '../css/Form.css';
 import { CameraAlt } from '@mui/icons-material';
+
 
 
 function Form3() {
@@ -12,11 +13,34 @@ function Form3() {
 
     const [img, setImg] = useState(null);
 
+    const videoRef = useRef(null);
+    const photoRef = useRef(null);
+    const [hasPhoto, setHasPhoto] = useState(false);
+
     function handleChange(e) {
         if (e.target.files[0]) {
             setImg(e.target.files[0])
         }
     };
+
+    const getFile = () => {
+        navigator.mediaDevices
+            .getUserMedia({
+                video: { width: 1920, height: 1080 }
+            })
+            .then(stream => {
+                let video = videoRef.current;
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    };
+
+    useEffect(() => {
+        getFile();
+    }, [videoRef]);
 
     console.log('Image ::: ', img);
 
@@ -49,21 +73,25 @@ function Form3() {
                                 onChange={handleChange}
                             />
                         </div>
-
                         <div>
-                            <label style={{ marginBottom: '10px' }}>Prendre une photo:</label> <br />
-                            <Button
-                                variant='contained'
-                                style={{ width: '100%', marginTop: '-5px', height: '61px', boxShadow: "none" }}
-                            >
-                                <CameraAlt />
-                            </Button>
+                            <label style={{ marginBottom: '10px' }}>Capturer une photo:</label> <br />
+                            <Button variant="contained" style={{marginTop: "-5px", height: '61px'}}>Capturer une photo</Button>
                         </div>
-
-                        {img && <img src={img.filePrevious} />}
-
-                        <br /> <br />
                     </div>
+                </div>
+                <div className="camera">
+                    <video ref={videoRef}></video>
+
+                    <Button
+                        variant='contained'
+                        className="btn"
+                    >
+                        <CameraAlt />
+                    </Button>
+                </div>
+                <div className={'result' + (hasPhoto ? 'hasPhoto' : '')}>
+                    <canvas ref={photoRef}></canvas>
+                    <Button variant="outlined">Fermer</Button>
                 </div>
                 <div className="col-12 container mt-5">
                     <div className="row">
@@ -72,7 +100,7 @@ function Form3() {
                                 color="primary"
                                 variant='contained'
                                 className='mb-3'
-                                style={{ marginLeft: "10px" , float: "right"}}
+                                style={{ marginLeft: "10px", float: "right" }}
                                 onClick={() => setCurrentStep(4)}
                             >
                                 Suivant

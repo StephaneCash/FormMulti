@@ -1,14 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Button, TextField, Card } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
 import { Country } from 'country-state-city';
 import InputAdornment from '@mui/material/InputAdornment';
 
-const useStyles = makeStyles((theme) => ({
-
-}))
 
 function Form2() {
 

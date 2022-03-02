@@ -1,4 +1,3 @@
-import './App.css';
 import { useContext } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Form1 from './pages/Form1';
