@@ -108,24 +108,20 @@ function Form2() {
                     <div className="row">
                         <div className="col-12">
 
-                            <Button
-                                color="primary"
-                                variant='contained'
-                                className='mb-3'
+                            <button
+                                className='mb-3 btn-confirm'
                                 style={{ marginLeft: "10px", float: "right" }}
                                 onClick={() => setCurrentStep(3)}
                             >
                                 Suivant
-                            </Button>
-                            <Button
-                                color="secondary"
-                                variant='contained'
-                                className='mb-3'
+                            </button>
+                            <button
+                                className='mb-3 btn-back'
                                 onClick={() => setCurrentStep(1)}
                                 style={{ float: "right" }}
                             >
                                 Retour
-                            </Button>
+                            </button>
                         </div>
                     </div>
                 </div>

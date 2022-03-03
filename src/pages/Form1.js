@@ -71,15 +71,13 @@ function Form1() {
                 <div className="col-12 container">
                     <div className="row">
                         <div className="col-12">
-                            <Button
-                                color="primary"
-                                variant='contained'
+                            <button
                                 onClick={() => setCurrentStep(2)}
-                                className='mb-3'
+                                className='mb-3 btn-confirm'
                                 style={{float:"right"}}
                             >
                                 Suivant
-                            </Button>
+                            </button>
                         </div>
                     </div>
                 </div>
