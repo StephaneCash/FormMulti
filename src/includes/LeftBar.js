@@ -3,6 +3,7 @@ import { multiStepContext } from "../StepContext";
 import React, { useContext } from 'react';
 import $ from "jquery";
 import "../css/LeftBar.css";
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         border: "1px solid silver",
         position: "fixed",
-        width: "15%",
+        width: "18%",
     },
     item: {
         display: 'flex',
@@ -44,9 +45,9 @@ const LeftBar = () => {
     const classes = useStyles();
 
     const { currentStep } = useContext(multiStepContext);
-    
+
     let i = $('#link');
-    if(currentStep === null){
+    if (currentStep === null) {
         $('#link').addClass('active');
     };
 
@@ -55,22 +56,22 @@ const LeftBar = () => {
             <Container className={classes.container}>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                         Informations personnelles
+                        <ArrowRightAltIcon /> Informations personnelles
                     </Typography>
                 </div>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                           <span id='link'>Adresses légales</span>
+                        <ArrowRightAltIcon /> Adresses légales
                     </Typography>
                 </div>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                            <span id="link">Informations justificatives</span>
+                        <ArrowRightAltIcon />Informations justificatives
                     </Typography>
                 </div>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                            <span id="link">Signature du contrat</span>
+                        <ArrowRightAltIcon />Signature du contrat
                     </Typography>
                 </div>
             </Container>

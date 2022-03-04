@@ -29,10 +29,10 @@ function App() {
     <>
       <Header />
       <Grid item container>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <LeftBar />
         </Grid>
-        <Grid item xs={10} style={{ padding: "10px", backgroundColor: "#efefef", marginTop: '100px' }}>
+        <Grid item xs={9} style={{ padding: "10px", backgroundColor: "#efefef", marginTop: '100px' }}>
           <Grid item sm={12}>
             <Card style={{ padding: "10px" }}>
               <div className="col-12" style={{ marginTop: "15px" }}>
