@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
-
 function Form1() {
 
     const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
@@ -71,13 +70,13 @@ function Form1() {
                 <div className="col-12 container">
                     <div className="row">
                         <div className="col-12">
-                            <button
+                            <Button
                                 onClick={() => setCurrentStep(2)}
                                 className='mb-3 btn-confirm'
                                 style={{float:"right"}}
                             >
                                 Suivant
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </div>

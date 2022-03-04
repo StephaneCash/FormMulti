@@ -1,22 +1,3 @@
-.camera {
-    position: relative;
-}
-
-.result {
-    position: fixed;
-    top: 0;
-    left: 100%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background-color: #222;
-    transition: 0.4s;
-}
-
-.result .hasPhoto {
-    left: 0;
-}
-
 .MuiStepIcon-root.MuiStepIcon-active {
     color: red !important;
 }
@@ -33,7 +14,6 @@
     border: none !important;
     height: 38px;
     box-shadow: 1px 1px 3px #cac1c1;
-    width: 10%;
 }
 
 .btn-confirm {
@@ -42,20 +22,16 @@
     border-radius: 5px;
     border: none !important;
     padding: 5px;
-    height: 38px;
     box-shadow: 1px 1px 3px #cac1c1;
-    width: 10%;
 }
 
 .btn-back:hover{
     color: #fff !important;
-    border: 2px solid #222 !important;
     opacity: 0.78;
 }
 
 .btn-confirm:hover {
     color: #fff !important;
-    border: 2px solid #222 !important;
     opacity: 0.88;
 }
 
@@ -66,4 +42,19 @@ video {
     height: 30vh;
 }
 
-.btn {}
+.btn {
+    position: absolute !important;
+    left: 35% !important;
+    top: 80% !important;
+}
+
+.imgCapturee{
+    border: 2px solid #efefef !important;
+    display: block !important;
+    margin-left: auto;
+    margin-right: auto !important;
+    width: 50%;
+    height: 45vh;
+    margin-top: 10px;
+    border-radius: 7px;
+}

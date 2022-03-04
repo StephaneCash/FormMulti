@@ -4,45 +4,44 @@ import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
 import '../css/Form.css';
 import { CameraAlt } from '@mui/icons-material';
+import Webcam from "react-webcam";
 
-
+const videoConstraints = {
+    facingMode: "user"
+};
 
 function Form3() {
 
     const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
 
-    const [img, setImg] = useState(null);
+    const [image, setImage] = useState('');
+    const webcamRef = React.useRef(null);
 
-    const videoRef = useRef(null);
-    const photoRef = useRef(null);
+    const capture = React.useCallback(
+        () => {
+            const imageSrc = webcamRef.current.getScreenshot();
+            setImage(imageSrc)
+            setUserData({...userData, 'imageCapture': imageSrc})
+        });
+
     const [hasPhoto, setHasPhoto] = useState(false);
 
     function handleChange(e) {
         if (e.target.files[0]) {
-            setImg(e.target.files[0])
+            let photo = e.target.files[0];
+            setUserData({ ...userData, "imgDoc": photo });
         }
     };
 
-    const getFile = () => {
-        navigator.mediaDevices
-            .getUserMedia({
-                video: { width: 1920, height: 1080 }
-            })
-            .then(stream => {
-                let video = videoRef.current;
-                video.srcObject = stream;
-                video.play();
-            })
-            .catch(error => {
-                console.error(error);
-            })
+    const handleCamera = () => {
+        setHasPhoto(true);
     };
 
-    useEffect(() => {
-        getFile();
-    }, [videoRef]);
+    const stepSuivant = () => {
+        setCurrentStep(4);
+    };
 
-    console.log('Image ::: ', img);
+    console.log("DATA Collections ::: ", userData);
 
     return (
         <>
@@ -75,40 +74,29 @@ function Form3() {
                         </div>
                         <div>
                             <label style={{ marginBottom: '10px' }}>Capturer une photo:</label> <br />
-                            <Button variant="contained" style={{marginTop: "-5px", height: '61px'}}>Capturer une photo</Button>
+                            <Button
+                                variant="contained"
+                                style={{ marginTop: "-5px" }}
+                                onClick={handleCamera}
+                            >
+                                <CameraAlt />
+                            </Button>
                         </div>
                     </div>
                 </div>
-                <div className="camera">
-                    <video ref={videoRef}></video>
 
-                    <Button
-                        variant='contained'
-                        className="btn"
-                    >
-                        <CameraAlt />
-                    </Button>
-                </div>
-                <div className={'result' + (hasPhoto ? 'hasPhoto' : '')}>
-                    <canvas ref={photoRef}></canvas>
-                    <Button variant="outlined">Fermer</Button>
-                </div>
                 <div className="col-12 container mt-5">
                     <div className="row">
                         <div className="col-12">
                             <Button
-                                color="primary"
-                                variant='contained'
-                                className='mb-3'
+                                className='mb-3 btn-confirm'
                                 style={{ marginLeft: "10px", float: "right" }}
-                                onClick={() => setCurrentStep(4)}
+                                onClick={stepSuivant}
                             >
                                 Suivant
                             </Button>
                             <Button
-                                color="secondary"
-                                variant='contained'
-                                className='mb-3'
+                                className='mb-3 btn-back'
                                 onClick={() => setCurrentStep(2)}
                                 style={{ marginLeft: "10px", float: "right" }}
                             >
@@ -118,6 +106,38 @@ function Form3() {
                     </div>
                 </div>
             </Card>
+
+            {hasPhoto ? (
+                <div className="webcam-container">
+                    {image == '' ? <Webcam
+                        audio={false}
+                        ref={webcamRef}
+                        screenshotFormat="image/jpeg"
+                        className="imgCapturee"
+                        videoConstraints={videoConstraints}
+                    /> : <img className="imgCapturee" src={image} />}
+                    <div>
+                        {image != '' ?
+                            <Button
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setImage('')
+                                }}
+                                style={{ float: "right" }}
+                                className="btn-back ">
+                                Supprimer
+                            </Button> :
+                            <Button
+                                style={{ float: "right" }}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    capture();
+                                }}
+                                className="btn-confirm">Capture</Button>
+                        }
+                    </div>
+                </div>
+            ) : ''}
         </>
     )
 }

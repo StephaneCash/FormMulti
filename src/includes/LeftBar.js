@@ -46,7 +46,6 @@ const LeftBar = () => {
     const { currentStep } = useContext(multiStepContext);
     
     let i = $('#link');
-    console.log(i , ' : Add selected')
     if(currentStep === null){
         $('#link').addClass('active');
     };

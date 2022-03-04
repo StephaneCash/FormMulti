@@ -48,19 +48,15 @@ function Form4() {
                 <div className="col-12 container">
                     <div className="row">
                         <div className="col-12">
-                            <Button
-                                color="primary"
-                                variant='contained'
-                                className='mb-3'
+                            <Button 
+                                className='mb-3 btn-confirm'
                                 style={{ marginLeft: "10px", float: "right"  }}
                                 onClick={submitData}
                             >
                                 Soumettre
                             </Button>
                             <Button
-                                color="secondary"
-                                variant='contained'
-                                className='mb-3'
+                                className='mb-3 btn-back'
                                 style={{ marginLeft: "10px", float: "right" }}
                                 onClick={() => setCurrentStep(3)}
                             >
