@@ -16,15 +16,18 @@ function Form3() {
 
     const [image, setImage] = useState('');
     const webcamRef = React.useRef(null);
+    const [hasPhoto, setHasPhoto] = useState(false);
 
     const capture = React.useCallback(
         () => {
             const imageSrc = webcamRef.current.getScreenshot();
             setImage(imageSrc)
-            setUserData({...userData, 'imageCapture': imageSrc})
         });
 
-    const [hasPhoto, setHasPhoto] = useState(false);
+    const validerImage = () =>{
+        let photoPrise = image;
+        setUserData({ ...userData, 'imageCapture': photoPrise })
+    };
 
     function handleChange(e) {
         if (e.target.files[0]) {
@@ -118,15 +121,24 @@ function Form3() {
                     /> : <img className="imgCapturee" src={image} />}
                     <div>
                         {image != '' ?
-                            <Button
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setImage('')
-                                }}
-                                style={{ float: "right" }}
-                                className="btn-back ">
-                                Supprimer
-                            </Button> :
+                            <>
+                                <Button
+                                    className="btn-confirm"
+                                    style={{ float: "right", marginLeft:"10px"}}
+                                    onClick={validerImage}
+                                >
+                                    Valider
+                                </Button>
+                                <Button
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        setImage('')
+                                    }}
+                                    style={{ float: "right" }}
+                                    className="btn-back ">
+                                    Supprimer
+                                </Button>
+                            </> :
                             <Button
                                 style={{ float: "right" }}
                                 onClick={(e) => {

@@ -55,7 +55,7 @@ const LeftBar = () => {
             <Container className={classes.container}>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                           Informations personnelles
+                         Informations personnelles
                     </Typography>
                 </div>
                 <div className={classes.item}>
