@@ -9,9 +9,9 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 const useStyles = makeStyles((theme) => ({
     container: {
         paddingTop: theme.spacing(10),
-        backgroundColor: "#555",
+        backgroundColor: "#222",
         height: "100vh",
-        color: '#fff',
+        color: '#555',
         border: "1px solid silver",
         position: "fixed",
         width: "18%",
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     check:{
-        backgroundColor:'#efefef',
+        borderBottom: "2px solid red",
         color: "red",
         width: "230px"
     }
