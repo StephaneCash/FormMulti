@@ -24,15 +24,18 @@ function Form3() {
             setImage(imageSrc)
         });
 
-    const validerImage = () =>{
+    const validerImage = () => {
         let photoPrise = image;
         setUserData({ ...userData, 'imageCapture': photoPrise })
     };
+
+    const [photoImage, setPhotoImage] = useState(false);
 
     function handleChange(e) {
         if (e.target.files[0]) {
             let photo = e.target.files[0];
             setUserData({ ...userData, "imgDoc": photo });
+            setPhotoImage(true);
         }
     };
 
@@ -43,8 +46,6 @@ function Form3() {
     const stepSuivant = () => {
         setCurrentStep(4);
     };
-
-    console.log("DATA Collections ::: ", userData);
 
     return (
         <>
@@ -69,6 +70,7 @@ function Form3() {
                         <div style={{ marginRight: '10px' }}>
                             <label style={{ marginBottom: '10px' }}>Télécharger un fichier:</label> <br />
                             <TextField
+                                disabled={image ? "disabled" : ""}
                                 type="file"
                                 variant="outlined"
                                 style={{ width: '100%', marginRight: "10px" }}
@@ -77,13 +79,22 @@ function Form3() {
                         </div>
                         <div>
                             <label style={{ marginBottom: '10px' }}>Capturer une photo:</label> <br />
-                            <Button
-                                variant="contained"
-                                style={{ marginTop: "-5px" }}
-                                onClick={handleCamera}
-                            >
-                                <CameraAlt />
-                            </Button>
+                            {photoImage ?
+                                <Button
+                                    disabled
+                                    variant="contained"
+                                    style={{ marginTop: "-5px" }}
+                                    onClick={handleCamera}
+                                >
+                                    <CameraAlt />
+                                </Button> : <Button
+                                    variant="contained"
+                                    style={{ marginTop: "-5px" }}
+                                    onClick={handleCamera}
+                                >
+                                    <CameraAlt />
+                                </Button>}
+
                         </div>
                     </div>
                 </div>
@@ -124,7 +135,7 @@ function Form3() {
                             <>
                                 <Button
                                     className="btn-confirm"
-                                    style={{ float: "right", marginLeft:"10px"}}
+                                    style={{ float: "right", marginLeft: "10px" }}
                                     onClick={validerImage}
                                 >
                                     Valider

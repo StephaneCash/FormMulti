@@ -32,11 +32,10 @@ const useStyles = makeStyles((theme) => ({
             display: "none"
         },
     },
-    icon: {
-        marginRight: theme.spacing(1),
-        [theme.breakpoints.up("sm")]: {
-            fontSize: "18px"
-        }
+    check:{
+        backgroundColor:'#efefef',
+        color: "red",
+        width: "230px"
     }
 }));
 
@@ -46,32 +45,41 @@ const LeftBar = () => {
 
     const { currentStep } = useContext(multiStepContext);
 
-    let i = $('#link');
-    if (currentStep === null) {
-        $('#link').addClass('active');
-    };
-
     return (
         <>
             <Container className={classes.container}>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                        <ArrowRightAltIcon /> Informations personnelles
+                        {currentStep === 1 ? <div className={classes.check}>
+                            <ArrowRightAltIcon /> Informations personnelles </div>
+                            :
+                            <><ArrowRightAltIcon /> Informations personnelles </>
+                        }
                     </Typography>
                 </div>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                        <ArrowRightAltIcon /> Adresses légales
+                        {currentStep === 2 ? <div className={classes.check}>
+                            <ArrowRightAltIcon />Adresses légales</div> :
+                            <><ArrowRightAltIcon />Adresses légales</>
+                        }
                     </Typography>
                 </div>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                        <ArrowRightAltIcon />Informations justificatives
+                        {currentStep === 3 ? <div className={classes.check}>
+                            <ArrowRightAltIcon />Informations justificatives</div> :
+                            <><ArrowRightAltIcon />Informations justificatives</>
+                        }
                     </Typography>
                 </div>
                 <div className={classes.item}>
                     <Typography className={classes.text}>
-                        <ArrowRightAltIcon />Signature du contrat
+                        {currentStep === 4 ? <div className={classes.check}>
+                            <ArrowRightAltIcon /> Signature du contrat
+                        </div> :
+                            <> <ArrowRightAltIcon /> Signature du contrat</>
+                        }
                     </Typography>
                 </div>
             </Container>

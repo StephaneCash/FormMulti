@@ -11,7 +11,7 @@ import Header from './includes/Header';
 
 function App() {
 
-  const { currentStep, finalData } = useContext(multiStepContext);
+  const { currentStep } = useContext(multiStepContext);
 
   function showStep(step) {
     if (step === 1) {
@@ -32,33 +32,31 @@ function App() {
         <Grid item xs={3}>
           <LeftBar />
         </Grid>
-        <Grid item xs={9} style={{ padding: "10px", backgroundColor: "#efefef", marginTop: '100px' }}>
-          <Grid item sm={12}>
-            <Card style={{ padding: "10px" }}>
-              <div className="col-12" style={{ marginTop: "15px" }}>
-                <div className="container center-stepper">
-                  <Stepper style={{ width: "100%" }} activeStep={currentStep - 1} orientation='horizontal'>
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
+        <Grid item xs={9} style={{ padding: "10px", backgroundColor: "#efefef", marginTop: '100px', marginLeft: "-50px"}}>
+          <Card style={{ padding: "10px" }}>
+            <div className="col-12" style={{ marginTop: "15px" }}>
+              <div className="container center-stepper">
+                <Stepper style={{ width: "100%" }} activeStep={currentStep - 1} orientation='horizontal'>
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
 
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
 
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
 
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
-                  </Stepper>
-                </div>
-                {showStep(currentStep)}
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
+                </Stepper>
               </div>
-            </Card>
-          </Grid>
+              {showStep(currentStep)}
+            </div>
+          </Card>
         </Grid>
       </Grid>
     </>

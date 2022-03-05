@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
@@ -6,6 +6,11 @@ import { multiStepContext } from "../StepContext";
 function Form4() {
 
     const { setCurrentStep, userData, setUserData, submitData } = useContext(multiStepContext);
+
+    const [confirmPass, setConfirmPass] = useState("");
+
+    console.log("Data user : ", userData);
+    console.log("Confirm pass : ", confirmPass);
 
     return (
         <>
@@ -17,7 +22,7 @@ function Form4() {
                             <select
                                 className="form-control"
                                 value={userData['sexe']}
-                                onChange={(e) => setUserData({ ...userData, 'sexe': e.target.value })}
+                                onChange={(e) => setUserData({ ...userData, 'typeCompte': e.target.value })}
                                 style={{ width: "100%", marginRight: "10px", height: "61px", marginTop: '-5px', boxShadow: "none", border: "1px solid silver" }}
                             >
                                 <option>--Type de compte--</option>
@@ -31,6 +36,8 @@ function Form4() {
                             <TextField
                                 label="Créer un mot de passe"
                                 variant="outlined"
+                                value={userData['password']}
+                                onChange={(e) => setUserData({ ...userData, 'password': e.target.value })}
                                 style={{ width: '100%' }}
                             /> <br /><br />
 
@@ -40,6 +47,8 @@ function Form4() {
                                 label="Ecrire à nouveau le mot de passe"
                                 variant="outlined"
                                 style={{ width: '100%' }}
+                                value={confirmPass}
+                                onChange={(e) => setConfirmPass(e.target.value )}
                             />
                             <br /> <br />
                         </div>

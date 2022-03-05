@@ -1,10 +1,60 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
 function Form1() {
 
     const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
+    const [isValidNom, setIsValidNom] = useState(false);
+    const [isValidPostnom, setIsValidPostnom] = useState(false);
+    const [click, setClick] = useState(false);
+
+
+    const handleNom = (e) => {
+        if (e.target.value === "") {
+            setIsValidNom(false)
+        } else {
+            setIsValidNom(true)
+        }
+    };
+
+    console.log("Nom :: ", isValidNom);
+
+    const handlePostnom = (e) => {
+        if (e.target.value === "") {
+            setIsValidPostnom(false);
+        } else {
+            setIsValidPostnom(true);
+        }
+    };
+
+    let isValid = false;
+
+    if (userData.nom) {
+        isValid = true;
+    };
+
+    const stepNext = () => {
+        setClick(true);
+        if (isValidNom === false || isValidPostnom === false || isValid === false) {
+            return false;
+        } else if (isValid) {
+            setCurrentStep(2)
+        }
+    };
+
+    if (userData.nom) {
+        console.log(userData.nom.length);
+    }
+
+    useEffect(() => {
+        if (userData.nom) {
+            setIsValidNom(true);
+        }
+        if (userData.postnom) {
+            setIsValidPostnom(true);
+        }
+    }, [isValidNom, isValidPostnom])
 
     return (
         <>
@@ -14,23 +64,37 @@ function Form1() {
                         <div className="col-6">
                             <label style={{ marginBottom: '10px' }}>Nom:</label> <br />
                             <TextField
+                                helperText={
+                                    click === true && (
+                                        <>
+                                            {isValidNom === false ? "Veuillez renseigner un nom svp !" : ""}
+                                        </>
+                                    )
+                                }
                                 label="Nom"
                                 variant="outlined"
                                 style={{ width: '100%' }}
                                 value={userData['nom']}
-                                onChange={(e) => setUserData({ ...userData, "nom": e.target.value })}
+                                onChange={(e) => (setUserData({ ...userData, "nom": e.target.value }), handleNom(e))}
                             />
-                            <br /> <br />
+                            <br /><br />
 
                             <label style={{ marginBottom: '10px' }}>Postnom:</label> <br />
                             <TextField
+                                helperText={
+                                    click === true && (
+                                        <>
+                                            {isValidPostnom === false ? "Veuillez renseigner un postnom svp !" : ""}
+                                        </>
+                                    )
+                                }
                                 label="Postnom"
                                 variant="outlined"
                                 style={{ width: '100%' }}
                                 value={userData['postnom']}
-                                onChange={(e) => setUserData({ ...userData, "postnom": e.target.value })}
+                                onChange={(e) => (setUserData({ ...userData, "postnom": e.target.value }), handlePostnom(e))}
                             />
-                            <br /> <br />
+                            <br /><br />
 
                             <label style={{ marginBottom: '10px' }}>Choisir votre sexe:</label> <br />
                             <select
@@ -71,9 +135,9 @@ function Form1() {
                     <div className="row">
                         <div className="col-12">
                             <Button
-                                onClick={() => setCurrentStep(2)}
+                                onClick={stepNext}
                                 className='mb-3 btn-confirm'
-                                style={{float:"right"}}
+                                style={{ float: "right" }}
                             >
                                 Suivant
                             </Button>
