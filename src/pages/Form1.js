@@ -7,6 +7,7 @@ function Form1() {
     const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
     const [isValidNom, setIsValidNom] = useState(false);
     const [isValidPostnom, setIsValidPostnom] = useState(false);
+    const [isValidLieuDeNaissance, setIsValidLieuDeNaissance] = useState(false);
     const [click, setClick] = useState(false);
 
 
@@ -18,8 +19,6 @@ function Form1() {
         }
     };
 
-    console.log("Nom :: ", isValidNom);
-
     const handlePostnom = (e) => {
         if (e.target.value === "") {
             setIsValidPostnom(false);
@@ -28,17 +27,11 @@ function Form1() {
         }
     };
 
-    let isValid = false;
-
-    if (userData.nom) {
-        isValid = true;
-    };
-
     const stepNext = () => {
         setClick(true);
-        if (isValidNom === false || isValidPostnom === false || isValid === false) {
+        if (isValidNom === false || isValidPostnom === false) {
             return false;
-        } else if (isValid) {
+        } else{
             setCurrentStep(2)
         }
     };
