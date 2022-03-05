@@ -33,9 +33,12 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     check:{
-        borderBottom: "2px solid red",
-        color: "red",
-        width: "230px"
+        border:"1px solid silver",
+        color: "#fff",
+        width: "230px",
+        borderRadius: "3px",
+        padding: "5px",
+        zIndex:"10000000"
     }
 }));
 
