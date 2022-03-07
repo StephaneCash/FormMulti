@@ -1,9 +1,9 @@
-import React, { useContext, useState, useRef, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
 import '../css/Form.css';
-import { CameraAlt } from '@mui/icons-material';
+import { CameraAlt, Check } from '@mui/icons-material';
 import Webcam from "react-webcam";
 
 const videoConstraints = {
@@ -17,6 +17,19 @@ function Form3() {
     const [image, setImage] = useState('');
     const webcamRef = React.useRef(null);
     const [hasPhoto, setHasPhoto] = useState(false);
+
+    const [isValidTypeDocument, setIsValidTypeDocument] = useState(false);
+    const [isValidPhoto, setIsValidPhoto] = useState(false);
+    const [isValidPhotoCapturee, setIsValidPhotoCapturee] = useState(false);
+    const [click, setClick] = useState(false);
+
+    const handleTypeDocument = (e) => {
+        if (e.target.value === "--Type de document--") {
+            setIsValidTypeDocument(false);
+        } else {
+            setIsValidTypeDocument(true);
+        }
+    };
 
     const capture = React.useCallback(
         () => {
@@ -32,11 +45,17 @@ function Form3() {
     const [photoImage, setPhotoImage] = useState(false);
 
     function handleChange(e) {
-        if (e.target.files[0]) {
-            let photo = e.target.files[0];
-            setUserData({ ...userData, "imgDoc": photo });
-            setPhotoImage(true);
-        }
+        if (e.target.value === "") {
+            setIsValidPhoto(false);
+        } else {
+            setIsValidPhoto(true);
+
+            if (e.target.files[0]) {
+                let photo = e.target.files[0];
+                setUserData({ ...userData, "imgDoc": photo });
+                setPhotoImage(true);
+            }
+        };
     };
 
     const handleCamera = () => {
@@ -44,8 +63,22 @@ function Form3() {
     };
 
     const stepSuivant = () => {
-        setCurrentStep(4);
+        setClick(true);
+        if (isValidTypeDocument === false || isValidPhoto === false) {
+            return false;
+        } else {
+            setCurrentStep(4);
+        };
     };
+
+    useEffect(() => {
+        if (userData.typeDocument) {
+            setIsValidTypeDocument(true);
+        }
+        if (userData.imgDoc) {
+            setIsValidPhoto(true);
+        }
+    }, [isValidTypeDocument, isValidPhoto,]);
 
     return (
         <>
@@ -57,14 +90,31 @@ function Form3() {
                             <select
                                 className="form-control"
                                 id="typedoc"
-                                onChange={(e) => setUserData({ ...userData, "typeDocument": e.target.value })}
+                                value={userData['typeDocument']}
+                                onChange={(e) => (setUserData({ ...userData, "typeDocument": e.target.value }), handleTypeDocument(e))}
                                 style={{ width: "100%", marginRight: "10px", height: "61px", marginTop: '-5px', boxShadow: "none", border: "1px solid silver" }}
                             >
-                                <option>--Type de document--</option>
-                                <option>Carte d'électeur</option>
-                                <option>Passeport</option>
-                                <option>Permis de conduire</option>
+                                {userData.typeDocument ?
+                                    <>
+                                        <option>Carte d'électeur</option>
+                                        <option>Passeport</option>
+                                        <option>Permis de conduire</option>
+                                    </> :
+                                    <>
+                                        <option>--Type de document--</option>
+                                        <option>Carte d'électeur</option>
+                                        <option>Passeport</option>
+                                        <option>Permis de conduire</option>
+                                    </>}
                             </select>
+                            <br />
+                            {
+                                click === true && (
+                                    <>
+                                        {isValidTypeDocument === false ? <div className="sexeObligatoire">Veuillez choisir un type de document svp !</div> : ""}
+                                    </>
+                                )
+                            }
                         </div>
 
                         <div style={{ marginRight: '10px' }}>
@@ -76,20 +126,37 @@ function Form3() {
                                 style={{ width: '100%', marginRight: "10px" }}
                                 onChange={handleChange}
                             />
+
+                            <br />
+                            {
+                                click === true && (
+                                    <>
+                                        {isValidPhoto === false ? <div className="sexeObligatoireImage">Veuillez téléchager un document svp !</div> : ""}
+                                    </>
+                                )
+                            }
+                            {
+                                userData.imgDoc ? <span style={{ color: "green" }}><Check /></span> : ""
+                            }
                         </div>
+
                         <div>
-                            <label style={{ marginBottom: '10px' }}>Capturer une photo:</label> <br />
+                            <label style={{ marginBottom: '10px' }}>Capturer udddne photo:</label> <br />
                             {photoImage ?
                                 <Button
                                     disabled
+                                    className="btnCamera"
                                     variant="contained"
-                                    style={{ marginTop: "-5px" }}
+                                    style={{ marginTop: "-5px", }}
                                     onClick={handleCamera}
                                 >
                                     <CameraAlt />
-                                </Button> : <Button
+                                </Button> :
+
+                                <Button
+                                    className="btnCamera"
                                     variant="contained"
-                                    style={{ marginTop: "-5px" }}
+                                    style={{ marginTop: "-5px", }}
                                     onClick={handleCamera}
                                 >
                                     <CameraAlt />
