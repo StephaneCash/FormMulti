@@ -34,7 +34,8 @@ function Form3() {
     const capture = React.useCallback(
         () => {
             const imageSrc = webcamRef.current.getScreenshot();
-            setImage(imageSrc)
+            setImage(imageSrc);
+            setIsValidPhoto(true);
         });
 
     const validerImage = () => {
@@ -76,6 +77,12 @@ function Form3() {
             setIsValidTypeDocument(true);
         }
         if (userData.imgDoc) {
+            setIsValidPhoto(true);
+        }
+        if(image){
+            setIsValidPhoto(true);
+        }
+        if(userData.userCapture !== undefined){
             setIsValidPhoto(true);
         }
     }, [isValidTypeDocument, isValidPhoto,]);
