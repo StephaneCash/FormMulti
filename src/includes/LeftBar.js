@@ -34,8 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
     check:{
         color: "#fff",
-        padding: "5px",
-        zIndex:"10000000"
+        zIndex:"1000000000"
     }
 }));
 

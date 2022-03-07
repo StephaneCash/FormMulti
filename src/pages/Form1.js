@@ -8,15 +8,17 @@ function Form1() {
     const [isValidNom, setIsValidNom] = useState(false);
     const [isValidPostnom, setIsValidPostnom] = useState(false);
     const [isValidLieuDeNaissance, setIsValidLieuDeNaissance] = useState(false);
+    const [isValidSexe, setIsValidSexe] = useState(false);
+    const [isValidDateNaissance, setIsValidDateNaissance] = useState(false);
     const [click, setClick] = useState(false);
 
 
     const handleNom = (e) => {
         if (e.target.value === "") {
-            setIsValidNom(false)
+            setIsValidNom(false);
         } else {
-            setIsValidNom(true)
-        }
+            setIsValidNom(true);
+        };
     };
 
     const handlePostnom = (e) => {
@@ -24,30 +26,64 @@ function Form1() {
             setIsValidPostnom(false);
         } else {
             setIsValidPostnom(true);
+        };
+    };
+
+    const handleSexe = (e) => {
+        console.log(e.target.value)
+        if (e.target.value === "--Sexe--") {
+            setIsValidSexe(false);
+        } else {
+            setIsValidSexe(true);
+        }
+    };
+
+    console.log(isValidSexe)
+
+    function handleLieuDeNaissance(e) {
+        if (e.target.value === "") {
+            setIsValidLieuDeNaissance(false);
+        } else {
+            setIsValidLieuDeNaissance(true);
+        };
+    };
+
+    const handleDateDeNaissance = (e) => {
+        if (e.target.value === "jj/mm/aaaa") {
+            setIsValidDateNaissance(false);
+        } else {
+            setIsValidDateNaissance(true);
         }
     };
 
     const stepNext = () => {
         setClick(true);
-        if (isValidNom === false || isValidPostnom === false) {
+        if (isValidNom === false || isValidPostnom === false || isValidLieuDeNaissance === false ||
+            isValidSexe === false || isValidDateNaissance === false
+        ) {
             return false;
-        } else{
+        } else {
             setCurrentStep(2)
         }
     };
 
-    if (userData.nom) {
-        console.log(userData.nom.length);
-    }
-
     useEffect(() => {
         if (userData.nom) {
             setIsValidNom(true);
-        }
+        };
         if (userData.postnom) {
             setIsValidPostnom(true);
+        };
+        if (userData.lieuDeNaissance) {
+            setIsValidLieuDeNaissance(true);
+        };
+        if (userData.sexe) {
+            setIsValidSexe(true);
         }
-    }, [isValidNom, isValidPostnom])
+        if (userData.dateDeNaissance) {
+            setIsValidDateNaissance(true);
+        }
+    }, [isValidNom, isValidPostnom, isValidLieuDeNaissance, isValidSexe, isValidDateNaissance]);
 
     return (
         <>
@@ -93,32 +129,61 @@ function Form1() {
                             <select
                                 className="form-control"
                                 value={userData['sexe']}
-                                onChange={(e) => setUserData({ ...userData, 'sexe': e.target.value })}
+                                onChange={(e) => (setUserData({ ...userData, 'sexe': e.target.value }), handleSexe(e))}
                                 style={{ width: "100%", marginRight: "10px", height: "61px", marginTop: '-5px', boxShadow: "none", border: "1px solid silver" }}
                             >
-                                <option>--Sexe--</option>
-                                <option>M</option>
-                                <option>F</option>
+                                {userData.sexe ?
+                                    <>
+                                        <option>M</option>
+                                        <option>F</option>
+                                    </> :
+                                    <>
+                                        <option>--Sexe--</option>
+                                        <option>M</option>
+                                        <option>F</option>
+                                    </>
+                                }
                             </select>
                             <br />
+                            {
+                                click === true && (
+                                    <>
+                                        {isValidSexe === false ? <div className="sexeObligatoire">Veuillez choisir un sexe svp !</div> : ""}
+                                    </>
+                                )
+                            }
                         </div>
 
                         <div className="col-6">
                             <label style={{ marginBottom: '10px' }}>Lieu de naissance:</label> <br />
                             <TextField
+                                helperText={
+                                    click === true && (
+                                        <>
+                                            {isValidLieuDeNaissance === false ? "Veuillez renseigner un lieu de naissance svp !" : ""}
+                                        </>
+                                    )
+                                }
                                 label="Lieu de naissance"
                                 variant="outlined"
                                 value={userData['lieuDeNaissance']}
-                                onChange={(e) => setUserData({ ...userData, "lieuDeNaissance": e.target.value })}
+                                onChange={(e) => (setUserData({ ...userData, "lieuDeNaissance": e.target.value }), handleLieuDeNaissance(e))}
                                 style={{ width: '100%' }}
                             /> <br /><br />
 
                             <label style={{ marginBottom: '10px' }}>Date de naissance:</label> <br />
                             <TextField
+                                helperText={
+                                    click === true && (
+                                        <>
+                                            {isValidDateNaissance === false ? "Veuillez renseigner une date de naissance svp !" : ""}
+                                        </>
+                                    )
+                                }
                                 type="date"
                                 variant="outlined"
                                 value={userData['dateDeNaissance']}
-                                onChange={(e) => setUserData({ ...userData, "dateDeNaissance": e.target.value })}
+                                onChange={(e) => (setUserData({ ...userData, "dateDeNaissance": e.target.value }), handleDateDeNaissance(e))}
                                 style={{ width: '100%' }}
                             />
                         </div>
