@@ -17,6 +17,7 @@ function Form3() {
     const [image, setImage] = useState('');
     const webcamRef = React.useRef(null);
     const [hasPhoto, setHasPhoto] = useState(false);
+    const [verifImage, setVerifImage] = useState(false);
 
     const [isValidTypeDocument, setIsValidTypeDocument] = useState(false);
     const [isValidPhoto, setIsValidPhoto] = useState(false);
@@ -36,11 +37,14 @@ function Form3() {
             const imageSrc = webcamRef.current.getScreenshot();
             setImage(imageSrc);
             setIsValidPhoto(true);
+            setVerifImage(true);
         });
 
     const validerImage = () => {
         let photoPrise = image;
-        setUserData({ ...userData, 'imageCapture': photoPrise })
+        setUserData({ ...userData, 'imageCapture': photoPrise });
+        console.log(userData);
+        setVerifImage(true);
     };
 
     const [photoImage, setPhotoImage] = useState(false);
@@ -82,8 +86,9 @@ function Form3() {
         if(image){
             setIsValidPhoto(true);
         }
-        if(userData.userCapture !== undefined){
+        if(userData.imageCapture){
             setIsValidPhoto(true);
+            setVerifImage(true);
         }
     }, [isValidTypeDocument, isValidPhoto,]);
 
@@ -127,7 +132,7 @@ function Form3() {
                         <div style={{ marginRight: '10px' }}>
                             <label style={{ marginBottom: '10px' }}>Télécharger un fichier:</label> <br />
                             <TextField
-                                disabled={image ? "disabled" : ""}
+                                disabled={verifImage ? "disabled" : ""}
                                 type="file"
                                 variant="outlined"
                                 style={{ width: '100%', marginRight: "10px" }}
