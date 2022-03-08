@@ -153,12 +153,13 @@ function Form4() {
                                 click === true ?
                                     <>
                                         {isvalidPwd === false ?
-                                            <div className="sexeOdbligatoireJust">{msgPwdVald}<br /><br /></div> :
+                                            <div className="sexeOdbligatoireJust">{msgPwdVald}<br /></div> :
                                             <span className="sexeOdbligatoire" style={{ color: "green" }}>
-                                                {msgPwdVald} <br /><br /></span>}
+                                                {msgPwdVald} <br /></span>}
                                     </>
                                     : isvalidPwd
                             }
+                            <br />
 
                             <label style={{ marginBottom: '10px' }}>Répéter le mot de passe:</label> <br />
                             <TextField
