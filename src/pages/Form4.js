@@ -17,6 +17,7 @@ function Form4() {
     const [etatBtnShowPass, setEtatBtnShowPass] = useState(false);
 
     const [msgPwdVald, setMsgPwdVald] = useState("Veuillez créer un mot de passe svp !");
+    const [msgConfimPassword, setConfirmPassword] = useState(false);
 
     // Vérification si un élément chosi ou pas, la valeur su type de compte
     function handleTypeCompte(e) {
@@ -56,14 +57,6 @@ function Form4() {
         console.log(etatBtnShowPass)
     };
 
-    if (userData.password) {
-        if (userData.password === confirmPass) {
-            //  console.log('Pass valid et égal')
-        } else {
-            // console.log('Pass différent')
-        }
-    }
-
     function submitData() {
         setClick(true);
 
@@ -78,7 +71,12 @@ function Form4() {
             setEtatSelect(true);
         }
         if (userData.password) {
-            setIsValidPwd(true);
+            if (userData.password.match(/[0-9]/) && userData.password.match(/[A-Z]/) && userData.password.match(/[a-z]/)
+                && userData.password.match(/[@,;:.*#/]/) && userData.password.length > 8) {
+                setIsValidPwd(true);
+            } else {
+                setIsValidPwd(false);
+            }
         }
     }, []);
     //console.log("Data user : ", userData);
@@ -157,7 +155,7 @@ function Form4() {
                                             <span className="sexeOdbligatoire" style={{ color: "green" }}>
                                                 {msgPwdVald} <br /></span>}
                                     </>
-                                    : isvalidPwd
+                                    : <>{userData.password  && isvalidPwd && ""}</>
                             }
                             <br />
 
