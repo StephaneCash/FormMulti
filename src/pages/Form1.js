@@ -38,8 +38,6 @@ function Form1() {
         }
     };
 
-    console.log(isValidSexe)
-
     function handleLieuDeNaissance(e) {
         if (e.target.value === "") {
             setIsValidLieuDeNaissance(false);
