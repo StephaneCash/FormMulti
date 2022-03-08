@@ -70,6 +70,24 @@ video {
     letter-spacing: 0.03333em;
 }
 
+.sexeOdbligatoireJust{
+    margin-top: 4px;
+    font-size: 0.75rem; 
+    text-align: justify;
+    padding: 0 12px;
+    color: red;
+}
+.sexeOdbligatoire{
+    color: rgba(0, 0, 0, 0.54);
+    margin-left: 12px;
+    margin-top: 4px;
+    font-size: 0.75rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.66;
+    letter-spacing: 0.03333em; 
+}
+
 .sexeObligatoireImage {
     color: rgba(0, 0, 0, 0.54);
     margin-left: 12px;
