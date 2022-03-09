@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { Button, TextField, Card, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton } from "@material-ui/core";
+import { Button, TextField, Card, OutlinedInput, InputAdornment, IconButton } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
-import $ from "jquery";
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 function Form4() {
@@ -17,7 +16,7 @@ function Form4() {
     const [etatBtnShowPass, setEtatBtnShowPass] = useState(false);
 
     const [msgPwdVald, setMsgPwdVald] = useState("Veuillez créer un mot de passe svp !");
-    const [msgConfimPassword, setConfirmPassword] = useState(false);
+    const [msgConfimPassword, setConfirmPassword] = useState("");
 
     // Vérification si un élément chosi ou pas, la valeur su type de compte
     function handleTypeCompte(e) {
@@ -37,8 +36,9 @@ function Form4() {
         }
         else if (e.target.value.match(/[0-9]/) && e.target.value.match(/[A-Z]/) && e.target.value.match(/[a-z]/)
             && e.target.value.match(/[@,;:.*#/]/) && e.target.value.length > 8) {
-            setIsValidPwd(true);
+
             setMsgPwdVald('Mot de passe valide');
+            setIsValidPwd(true);
         }
         else {
             setIsValidPwd(false);
@@ -54,7 +54,6 @@ function Form4() {
         } else {
             setEtatBtnShowPass(false);
         }
-        console.log(etatBtnShowPass)
     };
 
     function submitData() {
@@ -63,7 +62,14 @@ function Form4() {
         if (etatSelect === false || isvalidPwd === false) {
             return false;
         } else {
-            console.log("Data submitted successfully");
+            if (userData.password === confirmPass) {
+                console.log("Data submitted successfully");
+                setConfirmPassword("");
+                setCurrentStep(5);
+            } else {
+                console.log('Erreur ', isvalidPwd)
+                setConfirmPassword("Les deux mots de passe ne correspondent pas");
+            }
         }
     }
     useEffect(() => {
@@ -74,11 +80,12 @@ function Form4() {
             if (userData.password.match(/[0-9]/) && userData.password.match(/[A-Z]/) && userData.password.match(/[a-z]/)
                 && userData.password.match(/[@,;:.*#/]/) && userData.password.length > 8) {
                 setIsValidPwd(true);
+                setMsgPwdVald("");
             } else {
                 setIsValidPwd(false);
             }
         }
-    }, []);
+    }, [isvalidPwd]);
     //console.log("Data user : ", userData);
 
     return (
@@ -155,7 +162,7 @@ function Form4() {
                                             <span className="sexeOdbligatoire" style={{ color: "green" }}>
                                                 {msgPwdVald} <br /></span>}
                                     </>
-                                    : <>{userData.password  && isvalidPwd && ""}</>
+                                    : <>{userData.password && isvalidPwd && ""}</>
                             }
                             <br />
 
@@ -168,7 +175,24 @@ function Form4() {
                                 value={confirmPass}
                                 onChange={(e) => setConfirmPass(e.target.value)}
                             />
-                            <br /> <br />
+                            <br />
+                            {
+                                click === true ?
+                                    <>
+                                        {
+                                            isvalidPwd === true &&
+                                            <>
+                                                {
+                                                    msgConfimPassword ?
+                                                        <span className="sexeOdbligatoire">
+                                                            {msgConfimPassword} <br /><br />
+                                                        </span> : ""
+                                                }
+                                            </>
+                                        }
+                                    </> : <><br /><br /></>
+                            }
+                            <br />
                         </div>
                     </div>
                 </div>

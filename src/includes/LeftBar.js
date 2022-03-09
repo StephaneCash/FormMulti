@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import $ from "jquery";
 import "../css/LeftBar.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Check } from "@mui/icons-material";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -78,6 +79,16 @@ const LeftBar = () => {
                             <ArrowRightAltIcon /> Signature du contrat
                         </div> :
                             <> <ArrowRightAltIcon /> Signature du contrat</>
+                        }
+                    </Typography>
+                </div>
+
+                <div className={classes.item}>
+                    <Typography className={classes.text}>
+                        {currentStep === 5 ? <div className={classes.check}>
+                            <Check /> Inscription terminée
+                        </div> :
+                            <> <ArrowRightAltIcon /> Inscription terminée</>
                         }
                     </Typography>
                 </div>

@@ -154,7 +154,7 @@ function Form3() {
 
                         <div>
                             <label style={{ marginBottom: '10px' }}>Capturer udddne photo:</label> <br />
-                            {photoImage ?
+                            {photoImage || userData.imgDoc ?
                                 <Button
                                     disabled
                                     className="btnCamera"
