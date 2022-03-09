@@ -30,10 +30,10 @@ function App() {
   return (
     <>
       <Grid item container>
-        <Grid item xs={3}>
+        <div className="col-2">
           <LeftBar />
-        </Grid>
-        <Grid item xs={9} style={{ padding: "10px", backgroundColor: "#efefef", marginTop: '80px', marginLeft: "-50px" }}>
+        </div>
+        <div className="col-10" style={{ padding: "10px", backgroundColor: "#efefef", marginTop: '80px' }}>
           <Card style={{ padding: "10px" }}>
             <div className="col-12" style={{ marginTop: "15px" }}>
               {
@@ -62,7 +62,7 @@ function App() {
               {showStep(currentStep)}
             </div>
           </Card>
-        </Grid>
+        </div>
       </Grid>
     </>
   );

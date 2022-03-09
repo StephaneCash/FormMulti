@@ -1,3 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    background-color: #282c34;
+    color: #555;
+    height: 100vh;
+    border: "1px solid silver",
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+
+.link {
+    display: flex;
+    gap: 10px;
+    padding: 10px 10px;
+}
+
+.link:hover {
+    color: rgb(214, 211, 211);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.text-item{
+    white-space: nowrap;
+}
+
+.logo {
+    font-size: 25px;
+    line-height: 0;
+    cursor: pointer !important;
+    margin-top: 10px;
+    color: #fff;
+}
+
 .MuiStepIcon-root.MuiStepIcon-active {
     color: red !important;
 }
@@ -70,14 +114,15 @@ video {
     letter-spacing: 0.03333em;
 }
 
-.sexeOdbligatoireJust{
+.sexeOdbligatoireJust {
     margin-top: 4px;
-    font-size: 0.75rem; 
+    font-size: 0.75rem;
     text-align: justify;
     padding: 0 12px;
     color: rgba(0, 0, 0, 0.54);
 }
-.sexeOdbligatoire{
+
+.sexeOdbligatoire {
     color: rgba(0, 0, 0, 0.54);
     margin-left: 12px;
     margin-top: 4px;
@@ -85,7 +130,7 @@ video {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.66;
-    letter-spacing: 0.03333em; 
+    letter-spacing: 0.03333em;
 }
 
 .sexeObligatoireImage {
@@ -101,4 +146,70 @@ video {
 
 .btnCamera {
     height: 7.6vh !important;
+}
+
+.show{
+    width: 4.6% !important;
+    z-index: 1000000000;
+}
+
+.hide{
+    width: 94% !important;
+}
+
+@media (max-width: 1500px){
+    .sidebar{
+        width: 91.66666667% !important;
+        z-index: 1000000000;
+      }  
+      .logo{
+          display: none !important;
+      }
+      .name{
+          display: none !important;
+      }
+      .main-container.show{
+          width: 45px !important;
+      }
+      
+      .col-2{
+          width: 6.66666667% !important;
+      }
+      .col-10{
+        width: 93.33333333% !important;
+      }
+}
+   
+@media (max-width: 770px){
+    .form1 .row{
+        display: block !important;
+    }
+    .form1 .col-6{
+        width: 100% !important;
+    }
+    .sidebar{
+        width: 100% !important;
+    }
+    .col-2{
+        width: 16.66666667% !important;
+    }
+    .col-10{
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 500px){
+    .sidebar{
+        width: 100% !important;
+
+    }
+    .form1 .col-6{
+        width: 100% !important;
+    }
+    .col-2{
+        width: 16.66666667% !important;
+    }
+    .col-10{
+        width: 80% !important;
+    }
 }
