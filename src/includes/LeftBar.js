@@ -9,7 +9,7 @@ import { Check } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        paddingTop: theme.spacing(10),
+        paddingTop: theme.spacing(8),
         backgroundColor: "#222",
         height: "100vh",
         color: '#555',
@@ -27,15 +27,9 @@ const useStyles = makeStyles((theme) => ({
             cursor: 'pointer',
         },
     },
-    text: {
-        fontWeight: 500,
-        [theme.breakpoints.down("sm")]: {
-            display: "none"
-        },
-    },
-    check:{
+    check: {
         color: "#fff",
-        zIndex:"1000000000"
+        zIndex: "1000000000"
     }
 }));
 
@@ -48,6 +42,13 @@ const LeftBar = () => {
     return (
         <>
             <Container className={classes.container}>
+
+                <div className={classes.item}>
+                    <Typography className={classes.text}>
+                        <h2 style={{marginLeft:"5px", color: "white", marginBottom:"20px"}}>AZUR Bank</h2>
+                    </Typography>
+                </div>
+
                 <div className={classes.item}>
                     <Typography className={classes.text}>
                         {currentStep === 1 ? <div className={classes.check}>
