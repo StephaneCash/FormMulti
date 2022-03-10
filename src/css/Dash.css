@@ -7,15 +7,6 @@
 }
 
 
-button:focus {
-    border: 1px solid silver !important;
-    box-shadow: none !important;
-}
-
-#sidebar-toggle {
-    display: none;
-}
-
 .sidebar {
     height: 100vh;
     width: 260px;
@@ -24,9 +15,9 @@ button:focus {
     top: 0;
     z-index: 100;
     background-color: #111;
-    color: #fff;
+    color: #555;
     overflow-y: auto;
-    transition: width 500ms;
+    transition: right 0.8s;
 }
 
 .sidebar-header {
@@ -45,40 +36,10 @@ button:focus {
     margin-bottom: 1.3rem;
 }
 
-.sidebar ul li a {
-    color: #fff;
-    font-size: 14px;
-}
-
-.sidebar ul li a span:first-child {
-    padding-right: 1rem;
-}
-
-#sidebar-toggle:checked~.sidebar {
-    width: 60px;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header h3 span, #sidebar-toggle:checked~.sidebar ul li a span:last-child {
-    display: none;
-}
-
-#sidebar-toggle:checked~.sidebar .sidebar-header, #sidebar-toggle:checked~.sidebar ul li {
-    display: flex;
-    justify-content: center;
-}
-
-#sidebar-toggle:checked~.main-content {
-    margin-left: 60px;
-}
-
-#sidebar-toggle:checked~.main-content header {
-    left: 60px;
-}
-
 .main-content {
     position: relative;
+    transition: 0.5s;
     margin-left: 260px;
-    transition: margin-left 500ms;
 }
 
 header {
@@ -93,8 +54,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    transition: left 500ms;
+    transition: 0.8s;
 }
 
 main {
@@ -109,6 +69,7 @@ main {
     border: 1px solid silver;
     height: auto;
     background-color: #fff;
+    transition: left 0.8s;
 }
 
 
@@ -135,48 +96,4 @@ main {
         left: 60px;
         width: cal(100% - 60px);
     }
-
-    #sidebar-toggle:checked~.sidebar {
-        width: 240px;
-    }
-
-    #sidebar-toggle:checked~.sidebar .sidebar-header h3 span, #sidebar-toggle:checked~.sidebar ul li a span:last-child {
-        display: inline;
-    }
-
-    #sidebar-toggle:checked~.sidebar .sidebar-header {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    #sidebar-toggle:checked~.sidebar ul li {
-        display: block;
-    }
-
-    #sidebar-toggle:checked~.main-content {
-        margin-left: 60px;
-    }
-
-    #sidebar-toggle:checked~.main-content header {
-        left: 60px;
-    }
 }
-
-
-@keyframes flash {
-    0% {
-        color: #027581;
-        text-shadow: none;
-    }
-
-    80% {
-        color: #027581;
-        text-shadow: none;
-    }
-
-    100% {
-        color : red;
-        text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
-    }
-}
-

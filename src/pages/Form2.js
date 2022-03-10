@@ -135,7 +135,7 @@ function Form2() {
         <>
             <Card>
                 <form onSubmit={nextStep}>
-                    <div className="col-10 container mt-2">
+                    <div className="col-10 container form2 mt-2">
                         <div className="row">
                             <div className="col-6">
                                 <label style={{ marginBottom: '10px' }}>Adresse email:</label> <br />

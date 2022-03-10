@@ -8,6 +8,7 @@ import { Stepper, StepLabel, Step, Card, Grid } from "@material-ui/core";
 import { multiStepContext } from "./StepContext";
 import LeftBar from './includes/LeftBar';
 import "./css/Dash.css";
+import FormSubmit from './pages/FormSubmit';
 
 function App() {
 

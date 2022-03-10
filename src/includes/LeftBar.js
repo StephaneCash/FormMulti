@@ -46,81 +46,76 @@ const LeftBar = ({ children }) => {
 
     const toggle = () => {
         setIsOpen(!isOpen);
-        if (isOpen) {
-            $(".col-2").addClass('show');
-            $(".col-10").addClass('hide');
-        }
-        else {
-            $(".col-2").removeClass('show');
-            $(".col-10").removeClass('hide');
-        }
     };
 
     return (
-        <div className="main-container">
-            <motion.div animate={{ width: isOpen ? "248px" : "50px" }} className="sidebar" id="sidebar">
+        <>
+            <div className='sidebar' style={{ width: '248px' }}>
+                <div className="sidebar-menu">
+                    <ul>
 
-                <div className="top-section">
-                    {isOpen && <h1 className="logo">Azure Bank</h1>}
+                        <div className="main-container">
+                            <motion.div animate={{ width: "248px" }} className="sidebar" id="sidebar">
 
-                    <div className="bars">
-                        <Dehaze style={{ cursor: "pointer", color: "#fff" }} onClick={toggle} />
-                    </div>
+                                <div className="top-section">
+                                    <h1 className="logo">Azure Bank</h1>
+
+                                    <div className="bars">
+                                        <span style={{ cursor: "pointer", color: "#fff" }}>Logo img</span>
+                                    </div>
+                                </div>
+
+                                <section className="routes" style={{ marginTop: "10px" }}>
+                                    <div className="link">
+                                        <div className="icons"> {currentStep === 1 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="text-item">
+                                            {currentStep === 1 ? <div className={classes.check} id="name">Informations personnelles </div>
+                                                :<span className="name">formations personnelles </span>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div className="link">
+                                        <div className="icons"> {currentStep === 2 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="text-item">
+                                            {currentStep === 2 ? <div className={classes.check} id="name">Adresses légales </div>
+                                                :<div className="name">Adresses légales</div> 
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div className="link">
+                                        <div className="icons"> {currentStep === 3 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="text-item">
+                                            {currentStep === 3 ? <div className={classes.check} id="name">Informations justificatives </div>
+                                                :<div className="name">Informations justificatives</div> 
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div className="link">
+                                        <div className="icons"> {currentStep === 4 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="text-item">
+                                            {currentStep === 4 ? <div className={classes.check} id="name">Signature du contrat </div>
+                                                : <div className="name">Signature du contrat</div> 
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div className="link">
+                                        <div className="icons"> {currentStep === 5 ? <Check className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="text-item">
+                                            {currentStep === 5 ? <div className={classes.check} id="name">Inscription terminée </div>
+                                                :<div className="name">Inscription terminée</div> 
+                                            }
+                                        </div>
+                                    </div>
+                                </section>
+                            </motion.div>
+                        </div>
+                    </ul>
                 </div>
-
-                <section className="routes" style={{ marginTop: "10px" }}>
-                    <div className="link">
-                        <div className="icons"> {currentStep === 1 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
-                        <div className="text-item">
-                            {currentStep === 1 ? <div className={classes.check}>Informations personnelles </div>
-                                :
-                                <>{isOpen ? <span className="name">formations personnelles </span> : "formations personnelles"}</>
-                            }
-                        </div>
-                    </div>
-                    <div className="link">
-                        <div className="icons"> {currentStep === 2 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
-                        <div className="text-item">
-                            {currentStep === 2 ? <div className={classes.check} id="name">Adresses légales </div>
-                                :
-                                <>{isOpen ? <div className="name">Adresses légales</div> : ""}</>
-                            }
-                        </div>
-                    </div>
-
-                    <div className="link">
-                        <div className="icons"> {currentStep === 3 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
-                        <div className="text-item">
-                            {currentStep === 3 ? <div className={classes.check}>Informations justificatives </div>
-                                :
-                                <>{isOpen ? <div className="name">Informations justificatives</div> : ""}</>
-                            }
-                        </div>
-                    </div>
-
-                    <div className="link">
-                        <div className="icons"> {currentStep === 4 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
-                        <div className="text-item">
-                            {currentStep === 4 ? <div className={classes.check}>Signature du contrat </div>
-                                :
-                                <>{isOpen ? <div className="name">Signature du contrat</div> : ""}</>
-                            }
-                        </div>
-                    </div>
-
-                    <div className="link">
-                        <div className="icons"> {currentStep === 5 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
-                        <div className="text-item">
-                            {currentStep === 5 ? <div className={classes.check}>Inscription terminée </div>
-                                :
-                                <>{isOpen ? <div className="name">Inscription terminée</div> : ""}</>
-                            }
-                        </div>
-                    </div>
-                </section>
-                <main>{children}</main>
-            </motion.div>
-        </div>
+            </div>
+        </>
     );
 }
 

@@ -96,7 +96,7 @@ function Form3() {
         <>
             <Card>
                 <div className="col-10 container mt-2 form4">
-                    <div className="d-flex">
+                    <div className="d-flex form3">
                         <div style={{ marginRight: '10px' }}>
                             <label style={{ marginBottom: '10px' }}>Choisir le type de document:</label> <br />
                             <select

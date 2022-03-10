@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-.sidebar {
-    background-color: #282c34;
-    color: #555;
-    height: 100vh;
-    border: "1px solid silver",
-}
-
 .top-section {
     display: flex;
     align-items: center;
@@ -148,68 +141,33 @@ video {
     height: 7.6vh !important;
 }
 
-.show{
-    width: 4.6% !important;
-    z-index: 1000000000;
+@media(max-width:1205px) {
+    .sidebar {
+        width: 50px !important;
+    }
+    .name, #name{
+        display: none !important;
+    }
+    .logo{
+        display: none !important;
+    }
 }
 
-.hide{
-    width: 94% !important;
-}
-
-@media (max-width: 1500px){
-    .sidebar{
-        width: 91.66666667% !important;
-        z-index: 1000000000;
-      }  
-      .logo{
-          display: none !important;
-      }
-      .name{
-          display: none !important;
-      }
-      .main-container.show{
-          width: 45px !important;
-      }
-      
-      .col-2{
-          width: 6.66666667% !important;
-      }
-      .col-10{
-        width: 93.33333333% !important;
-      }
-}
-   
-@media (max-width: 770px){
-    .form1 .row{
+@media(max-width: 730px){
+    .form1.row, .form2 .row, .form3, .form41{
         display: block !important;
     }
-    .form1 .col-6{
+    .form1 .colonne6, .form2 .col-6, .form41 .col-6{
         width: 100% !important;
     }
-    .sidebar{
+
+    .form1 .colonne62{
         width: 100% !important;
     }
-    .col-2{
-        width: 16.66666667% !important;
-    }
-    .col-10{
-        width: 80% !important;
+
+    .formB .MuiButton-root{
+        margin: 12px 5px 0 0 !important;
     }
 }
 
-@media (max-width: 500px){
-    .sidebar{
-        width: 100% !important;
 
-    }
-    .form1 .col-6{
-        width: 100% !important;
-    }
-    .col-2{
-        width: 16.66666667% !important;
-    }
-    .col-10{
-        width: 80% !important;
-    }
-}

@@ -155,7 +155,7 @@ function Form1() {
                             }
                         </div>
 
-                        <div className="col-6">
+                        <div className="col-6 colonne62">
                             <label style={{ marginBottom: '10px' }}>Lieu de naissance:</label> <br />
                             <TextField
                                 helperText={
@@ -190,7 +190,7 @@ function Form1() {
                         </div>
                     </div>
                 </div>
-                <div className="col-12 container">
+                <div className="col-12 formB container">
                     <div className="row">
                         <div className="col-12">
                             <Button

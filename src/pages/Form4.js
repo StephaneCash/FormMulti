@@ -92,7 +92,7 @@ function Form4() {
         <>
             <Card>
                 <div className="col-10 container mt-2">
-                    <div className="row">
+                    <div className="row form41">
                         <div className="col-6">
                             <label style={{ marginBottom: '10px' }}>Type de compte:</label> <br />
                             <select
