@@ -7,7 +7,7 @@ import Form4 from "./pages/Form4";
 import { Stepper, StepLabel, Step, Card, Grid } from "@material-ui/core";
 import { multiStepContext } from "./StepContext";
 import LeftBar from './includes/LeftBar';
-import Header from './includes/Header';
+import "./css/Dash.css";
 
 function App() {
 
@@ -27,38 +27,37 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Grid item container>
-        <Grid item xs={3}>
-          <LeftBar />
-        </Grid>
-        <Grid item xs={9} style={{ padding: "10px", backgroundColor: "#efefef", marginTop: '100px', marginLeft: "-50px"}}>
-          <Card style={{ padding: "10px" }}>
-            <div className="col-12" style={{ marginTop: "15px" }}>
-              <div className="container center-stepper">
-                <Stepper style={{ width: "100%" }} activeStep={currentStep - 1} orientation='horizontal'>
-                  <Step>
-                    <StepLabel></StepLabel>
-                  </Step>
+      <LeftBar />
+      <div className="main-content">
+        <main>
+          <section className="recent">
+            <Card style={{ padding: "10px" }}>
+              <div className="col-12" style={{ marginTop: "15px" }}>
+                <div className="container center-stepper">
+                  <Stepper style={{ width: "100%" }} activeStep={currentStep - 1} orientation='horizontal'>
+                    <Step>
+                      <StepLabel></StepLabel>
+                    </Step>
 
-                  <Step>
-                    <StepLabel></StepLabel>
-                  </Step>
+                    <Step>
+                      <StepLabel></StepLabel>
+                    </Step>
 
-                  <Step>
-                    <StepLabel></StepLabel>
-                  </Step>
+                    <Step>
+                      <StepLabel></StepLabel>
+                    </Step>
 
-                  <Step>
-                    <StepLabel></StepLabel>
-                  </Step>
-                </Stepper>
+                    <Step>
+                      <StepLabel></StepLabel>
+                    </Step>
+                  </Stepper>
+                </div>
+                {showStep(currentStep)}
               </div>
-              {showStep(currentStep)}
-            </div>
-          </Card>
-        </Grid>
-      </Grid>
+            </Card>
+          </section>
+        </main>
+      </div>
     </>
   );
 }
