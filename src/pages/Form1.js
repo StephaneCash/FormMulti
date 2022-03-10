@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
+
+
 function Form1() {
 
     const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
@@ -86,9 +88,9 @@ function Form1() {
     return (
         <>
             <Card>
-                <div className="col-10 container mt-2">
-                    <div className="row">
-                        <div className="col-6">
+                <div className="col-10 container mt-2 form1">
+                    <div className="row form1dFlex">
+                        <div className="col-6 colonne6">
                             <label style={{ marginBottom: '10px' }}>Nom:</label> <br />
                             <TextField
                                 helperText={
@@ -99,6 +101,7 @@ function Form1() {
                                     )
                                 }
                                 label="Nom"
+                                className="form1input"
                                 variant="outlined"
                                 style={{ width: '100%' }}
                                 value={userData['nom']}

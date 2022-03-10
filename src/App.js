@@ -22,8 +22,10 @@ function App() {
       return <Form3 />
     } else if (step === 4) {
       return <Form4 />;
-    }
-  }
+    } else if (step === 5) {
+      return <FormSubmit />
+    };
+  };
 
   return (
     <>
