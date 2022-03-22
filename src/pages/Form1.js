@@ -172,7 +172,7 @@ function Form1() {
                                 style={{ width: '100%' }}
                             /> <br /><br />
 
-                            <label style={{ marginBottom: '10px' }}>Datede naissance:</label> <br />
+                            <label style={{ marginBottom: '10px' }}>Date de naissance:</label> <br />
                             <TextField
                                 helperText={
                                     click === true && (
