@@ -180,7 +180,7 @@ function Form1() {
                                             {isValidDateNaissance === false ? "Veuillez renseigner une date de naissance svp !" : ""}
                                         </>
                                     )
-                                }
+                                   }
                                 type="date"
                                 variant="outlined"
                                 value={userData['dateDeNaissance']}
