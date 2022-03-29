@@ -8,15 +8,6 @@ import { motion } from "framer-motion";
 
 
 const useStyles = makeStyles((theme) => ({
-    container: {
-        paddingTop: theme.spacing(8),
-        backgroundColor: "#222",
-        height: "100vh",
-        color: '#555',
-        border: "1px solid silver",
-        position: "fixed",
-        width: "18%",
-    },
     item: {
         display: 'flex',
         alignItems: 'center',
@@ -40,12 +31,6 @@ const LeftBar = ({ children }) => {
     const classes = useStyles();
 
     const { currentStep } = useContext(multiStepContext);
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => {
-        setIsOpen(!isOpen);
-    };
 
     return (
         <>

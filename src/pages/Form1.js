@@ -100,7 +100,7 @@ function Form1() {
                                         </>
                                     )
                                 }
-                                label="Nom"
+                                placeholder="Entrer votre nom"
                                 className="form1input"
                                 variant="outlined"
                                 style={{ width: '100%' }}
@@ -118,7 +118,7 @@ function Form1() {
                                         </>
                                     )
                                 }
-                                label="Postnom"
+                                placeholder="Postnom"
                                 variant="outlined"
                                 style={{ width: '100%' }}
                                 value={userData['postnom']}
@@ -165,7 +165,7 @@ function Form1() {
                                         </>
                                     )
                                 }
-                                label="Lieu de naissance"
+                                placeholder="Lieu de naissance"
                                 variant="outlined"
                                 value={userData['lieuDeNaissance']}
                                 onChange={(e) => (setUserData({ ...userData, "lieuDeNaissance": e.target.value }), handleLieuDeNaissance(e))}

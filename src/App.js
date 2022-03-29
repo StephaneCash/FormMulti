@@ -34,30 +34,28 @@ function App() {
       <div className="main-content">
         <main>
           <section className="recent">
-            <Card style={{ padding: "10px" }}>
-              <div className="col-12" style={{ marginTop: "15px" }}>
-                <div className="container center-stepper">
-                  <Stepper style={{ width: "100%" }} activeStep={currentStep - 1} orientation='horizontal'>
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
+            <div className="col-12" style={{ marginTop: "15px" }}>
+              <div className="container center-stepper">
+                <Stepper style={{ width: "100%" }} activeStep={currentStep - 1} orientation='horizontal'>
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
 
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
 
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
 
-                    <Step>
-                      <StepLabel></StepLabel>
-                    </Step>
-                  </Stepper>
-                </div>
-                {showStep(currentStep)}
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
+                </Stepper>
               </div>
-            </Card>
+              {showStep(currentStep)}
+            </div>
           </section>
         </main>
       </div>
