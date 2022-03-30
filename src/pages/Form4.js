@@ -169,7 +169,7 @@ function Form4() {
                             <label style={{ marginBottom: '10px' }}>Répéter le mot de passe:</label> <br />
                             <TextField
                                 type="text"
-                                label="Ecrire à nouveau le mot de passe"
+                                placeholder="Ecrire à nouveau le mot de passe"
                                 variant="outlined"
                                 style={{ width: '100%' }}
                                 value={confirmPass}
@@ -195,27 +195,28 @@ function Form4() {
                             <br />
                         </div>
                     </div>
-                </div>
-                <div className="col-12 container">
-                    <div className="row">
-                        <div className="col-12">
-                            <Button
-                                className='mb-3 btn-confirm'
-                                style={{ marginLeft: "10px", float: "right" }}
-                                onClick={submitData}
-                            >
-                                Soumettre
-                            </Button>
-                            <Button
-                                className='mb-3 btn-back'
-                                style={{ marginLeft: "10px", float: "right" }}
-                                onClick={() => setCurrentStep(3)}
-                            >
-                                Retour
-                            </Button>
+                    <div className="col-12 container">
+                        <div className="row">
+                            <div className="col-12">
+                                <Button
+                                    className='mb-3 btn-confirm'
+                                    style={{ marginLeft: "10px", float: "right", marginRight: "-10px" }}
+                                    onClick={submitData}
+                                >
+                                    Soumettre
+                                </Button>
+                                <Button
+                                    className='mb-3 btn-back'
+                                    style={{ marginLeft: "10px", float: "right" }}
+                                    onClick={() => setCurrentStep(3)}
+                                >
+                                    Retour
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </Card>
         </>
     )

@@ -83,10 +83,10 @@ function Form3() {
         if (userData.imgDoc) {
             setIsValidPhoto(true);
         }
-        if(image){
+        if (image) {
             setIsValidPhoto(true);
         }
-        if(userData.imageCapture){
+        if (userData.imageCapture) {
             setIsValidPhoto(true);
             setVerifImage(true);
         }
@@ -176,25 +176,25 @@ function Form3() {
 
                         </div>
                     </div>
-                </div>
 
-                <div className="col-12 container mt-5">
-                    <div className="row">
-                        <div className="col-12">
-                            <Button
-                                className='mb-3 btn-confirm'
-                                style={{ marginLeft: "10px", float: "right" }}
-                                onClick={stepSuivant}
-                            >
-                                Suivant
-                            </Button>
-                            <Button
-                                className='mb-3 btn-back'
-                                onClick={() => setCurrentStep(2)}
-                                style={{ marginLeft: "10px", float: "right" }}
-                            >
-                                Retour
-                            </Button>
+                    <div className="col-12 container mt-5">
+                        <div className="row">
+                            <div className="col-12">
+                                <Button
+                                    className='mb-3 btn-confirm'
+                                    style={{ marginLeft: "10px", float: "right", marginRight: "-10px" }}
+                                    onClick={stepSuivant}
+                                >
+                                    Suivant
+                                </Button>
+                                <Button
+                                    className='mb-3 btn-back'
+                                    onClick={() => setCurrentStep(2)}
+                                    style={{ marginLeft: "10px", float: "right" }}
+                                >
+                                    Retour
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>

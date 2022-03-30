@@ -152,7 +152,7 @@ function Form2() {
                                             }
                                         </>
                                     }
-                                    label="Adresse email"
+                                    placeholder="Adresse email"
                                     variant="outlined"
                                     style={{ width: '100%' }}
                                     value={userData['email']}
@@ -174,7 +174,7 @@ function Form2() {
                                             }
                                         </>
                                     }
-                                    label="Numéro de téléphone"
+                                    placeholder="Numéro de téléphone"
                                     id="outlined-start-adornment"
                                     variant="outlined"
                                     value={userData['numroPhone']}
@@ -271,28 +271,29 @@ function Form2() {
                                 }
                             </div>
                         </div>
-                    </div>
-                    <div className="col-12 container">
-                        <div className="row">
-                            <div className="col-12">
+                        <div className="col-12 container">
+                            <div className="row">
+                                <div className="col-12">
 
-                                <Button
-                                    className='mb-3 btn-confirm'
-                                    type="submit"
-                                    style={{ marginLeft: "10px", float: "right" }}
-                                >
-                                    Suivant
-                                </Button>
-                                <Button
-                                    className='mb-3 btn-back'
-                                    onClick={() => setCurrentStep(1)}
-                                    style={{ float: "right" }}
-                                >
-                                    Retour
-                                </Button>
+                                    <Button
+                                        className='mb-3 btn-confirm'
+                                        type="submit"
+                                        style={{ marginLeft: "10px", float: "right", marginRight: "-10px"}}
+                                    >
+                                        Suivant
+                                    </Button>
+                                    <Button
+                                        className='mb-3 btn-back'
+                                        onClick={() => setCurrentStep(1)}
+                                        style={{ float: "right"}}
+                                    >
+                                        Retour
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </form>
             </Card>
         </>
