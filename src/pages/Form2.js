@@ -201,11 +201,15 @@ function Form2() {
                                             <>
                                                 {
                                                     pays.map((val, index) => {
-                                                        return (
-                                                            <>
-                                                                <option key={index}>{val.name}</option>
-                                                            </>
-                                                        )
+                                                        if (val.name === "Congo The Democratic Republic Of The") {
+                                                            return (
+                                                                <>
+                                                                    <option key={index}>
+                                                                        {val.name}
+                                                                    </option>
+                                                                </>
+                                                            )
+                                                        }
                                                     })
                                                 }
                                             </> :
@@ -213,11 +217,15 @@ function Form2() {
                                                 <option>--Pays--</option>
                                                 {
                                                     pays.map((val, index) => {
-                                                        return (
-                                                            <>
-                                                                <option key={index}>{val.name}</option>
-                                                            </>
-                                                        )
+                                                        if (val.name === "Congo The Democratic Republic Of The") {
+                                                            return (
+                                                                <>
+                                                                    <option key={index}>
+                                                                        {val.name}
+                                                                    </option>
+                                                                </>
+                                                            )
+                                                        }
                                                     })
                                                 }
                                             </>
@@ -278,14 +286,14 @@ function Form2() {
                                     <Button
                                         className='mb-3 btn-confirm'
                                         type="submit"
-                                        style={{ marginLeft: "10px", float: "right", marginRight: "-10px"}}
+                                        style={{ marginLeft: "10px", float: "right", marginRight: "-10px" }}
                                     >
                                         Suivant
                                     </Button>
                                     <Button
                                         className='mb-3 btn-back'
                                         onClick={() => setCurrentStep(1)}
-                                        style={{ float: "right"}}
+                                        style={{ float: "right" }}
                                     >
                                         Retour
                                     </Button>

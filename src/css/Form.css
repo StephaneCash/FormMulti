@@ -82,6 +82,7 @@ video {
     height: 30vh;
 }
 
+
 .btn {
     position: absolute !important;
     left: 35% !important;
@@ -89,7 +90,6 @@ video {
 }
 
 .imgCapturee {
-    border: 2px solid #efefef !important;
     display: block !important;
     margin-left: auto;
     margin-right: auto !important;
@@ -187,6 +187,10 @@ video {
 @media (max-width: 600px){
     .btn-confirm{
         margin-bottom: 20px !important;
+    }
+
+    .imgCapturee {
+        width: 100% !important;
     }
 }
 
