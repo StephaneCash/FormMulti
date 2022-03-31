@@ -85,6 +85,9 @@ function Form4() {
                 setIsValidPwd(false);
             }
         }
+        if (userData.scroll === 5) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
     }, [isvalidPwd]);
     //console.log("Data user : ", userData);
 
@@ -208,7 +211,7 @@ function Form4() {
                                 <Button
                                     className='mb-3 btn-back'
                                     style={{ marginLeft: "10px", float: "right" }}
-                                    onClick={() => setCurrentStep(3)}
+                                    onClick={() => (setCurrentStep(3), setUserData({...userData, 'scroll': 6}))}
                                 >
                                     Retour
                                 </Button>

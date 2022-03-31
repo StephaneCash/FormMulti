@@ -187,6 +187,12 @@ video {
 @media (max-width: 600px){
     .btn-confirm{
         margin-bottom: 20px !important;
+        width: 100% !important;
+        margin-right: 0px !important;
+    }
+
+    .btn-back{
+        width: 100% !important;
     }
 
     .imgCapturee {

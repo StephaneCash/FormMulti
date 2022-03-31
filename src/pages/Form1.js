@@ -64,7 +64,8 @@ function Form1() {
         ) {
             return false;
         } else {
-            setCurrentStep(2)
+            setUserData({ ...userData, 'scroll': 1 });
+            setCurrentStep(2);
         }
     };
 
@@ -83,7 +84,10 @@ function Form1() {
         }
         if (userData.dateDeNaissance) {
             setIsValidDateNaissance(true);
-        }
+        };
+        if (userData.scroll === 2) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        };
     }, [isValidNom, isValidPostnom, isValidLieuDeNaissance, isValidSexe, isValidDateNaissance]);
 
     return (
@@ -97,7 +101,7 @@ function Form1() {
                                 helperText={
                                     click === true && (
                                         <>
-                                            {isValidNom === false ? "Veuillez renseigner un nom svp !" : <Check style={{fontSize:'15px', color:'green',}} />}
+                                            {isValidNom === false ? "Veuillez renseigner un nom svp !" : <Check style={{ fontSize: '15px', color: 'green', }} />}
                                         </>
                                     )
                                 }
@@ -116,7 +120,7 @@ function Form1() {
                                     click === true && (
                                         <>
                                             {isValidPostnom === false ? "Veuillez renseigner un postnom svp !" :
-                                            <Check style={{fontSize:'15px', color:'green',}} />
+                                                <Check style={{ fontSize: '15px', color: 'green', }} />
                                             }
                                         </>
                                     )
@@ -152,8 +156,8 @@ function Form1() {
                             {
                                 click === true && (
                                     <>
-                                        {isValidSexe === false ? <div className="sexeObligatoire">Veuillez choisir un sexe svp !</div> : 
-                                        <Check className="checkSexe" style={{fontSize:'15px', color:'green'}} />
+                                        {isValidSexe === false ? <div className="sexeObligatoire">Veuillez choisir un sexe svp !</div> :
+                                            <Check className="checkSexe" style={{ fontSize: '15px', color: 'green' }} />
                                         }
                                     </>
                                 )
@@ -166,8 +170,8 @@ function Form1() {
                                 helperText={
                                     click === true && (
                                         <>
-                                            {isValidLieuDeNaissance === false ? "Veuillez renseigner un lieu de naissance svp !" : 
-                                            <Check style={{fontSize:'15px', color:'green',}} />
+                                            {isValidLieuDeNaissance === false ? "Veuillez renseigner un lieu de naissance svp !" :
+                                                <Check style={{ fontSize: '15px', color: 'green', }} />
                                             }
                                         </>
                                     )
@@ -184,8 +188,8 @@ function Form1() {
                                 helperText={
                                     click === true && (
                                         <>
-                                            {isValidDateNaissance === false ? "Veuillez renseigner une date de naissance svp !" : 
-                                            <Check style={{fontSize:'15px', color:'green',}} />
+                                            {isValidDateNaissance === false ? "Veuillez renseigner une date de naissance svp !" :
+                                                <Check style={{ fontSize: '15px', color: 'green', }} />
                                             }
                                         </>
                                     )

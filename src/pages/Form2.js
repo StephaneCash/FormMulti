@@ -98,6 +98,12 @@ function Form2() {
         if (userData.nationalite) {
             setIsValidNationalite(true);
         }
+        if (userData.scroll === 1) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+        if (userData.scroll === 4) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
     }, [isValidEmail, isValidNumber, isValidPays, isValidNationalite]);
 
     let paysRempli = "";
@@ -128,6 +134,7 @@ function Form2() {
             return false;
         } else {
             setCurrentStep(3);
+            setUserData({ ...userData, 'scroll': 3 })
         }
     };
 
@@ -184,7 +191,7 @@ function Form2() {
                                             {phoneCodePays ? "+" + codeFormat : 'CODE'}
                                         </InputAdornment>,
                                     }}
-                                    onChange={(e) => (setUserData({ ...userData, "numroPhone": e.target.value }), handleNumPhone(e))}
+                                    onChange={(e) => (setUserData({ ...userData, 'numroPhone': e.target.value }), handleNumPhone(e))}
                                 />
                             </div>
 
@@ -292,7 +299,7 @@ function Form2() {
                                     </Button>
                                     <Button
                                         className='mb-3 btn-back'
-                                        onClick={() => setCurrentStep(1)}
+                                        onClick={() => (setCurrentStep(1), setUserData({ ...userData, 'scroll': 2 }))}
                                         style={{ float: "right" }}
                                     >
                                         Retour

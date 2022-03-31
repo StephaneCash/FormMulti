@@ -74,6 +74,7 @@ function Form3() {
             return false;
         } else {
             setCurrentStep(4);
+            setUserData({ ...userData, "scroll": 5 })
         };
     };
 
@@ -90,6 +91,12 @@ function Form3() {
         if (userData.imageCapture) {
             setIsValidPhoto(true);
             setVerifImage(true);
+        }
+        if (userData.scroll === 3) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+        if (userData.scroll === 6) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
         }
     }, [isValidTypeDocument, isValidPhoto,]);
 
@@ -181,7 +188,7 @@ function Form3() {
                     <div className="row">
                         <div className="col-12">
                             <Button
-                                className='mb-3 btn-confirm'
+                                className='mb-3 btn-confirm btnsuivant'
                                 style={{ marginLeft: "10px", float: "right", marginRight: "-10px" }}
                                 onClick={stepSuivant}
                             >
@@ -189,7 +196,7 @@ function Form3() {
                             </Button>
                             <Button
                                 className='mb-3 btn-back'
-                                onClick={() => setCurrentStep(2)}
+                                onClick={() => (setCurrentStep(2), setUserData({ ...userData, 'scroll': 4 }))}
                                 style={{ marginLeft: "10px", float: "right" }}
                             >
                                 Retour
@@ -217,7 +224,7 @@ function Form3() {
 
                                             <Button
                                                 className="btn-confirm"
-                                                style={{ float: "right", marginLeft: "10px",marginBottom: "20px" }}
+                                                style={{ float: "right", marginLeft: "10px", marginBottom: "20px" }}
                                                 onClick={validerImage}
                                             >
                                                 {imgVal === false ? "valider" : <>Image validée <Check /></>}
