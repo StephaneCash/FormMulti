@@ -1,10 +1,12 @@
 import { makeStyles } from "@material-ui/core";
 import { multiStepContext } from "../StepContext";
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import "../css/LeftBar.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Check } from "@mui/icons-material";
+import { Check, AccountCircle, LocationOn } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +43,7 @@ const LeftBar = ({ children }) => {
                         <div className="main-container">
                             <motion.div animate={{ width: "248px" }} className="sidebar" id="sidebar">
 
-                                <div className="top-section mt-4">
+                                <div className="top-section mt-4 mb-5">
                                     <h1 className="logo">Azure Bank</h1>
 
                                     <div className="bars">
@@ -51,7 +53,7 @@ const LeftBar = ({ children }) => {
 
                                 <section className="routes" style={{ marginTop: "10px" }}>
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 1 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="icons"> {currentStep === 1 ? <AccountCircle className={classes.check} /> : <AccountCircle />} </div>
                                         <div className="text-item">
                                             {currentStep === 1 ? <div className={classes.check} id="name">Informations personnelles </div>
                                                 :<span className="name">formations personnelles </span>
@@ -59,7 +61,7 @@ const LeftBar = ({ children }) => {
                                         </div>
                                     </div>
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 2 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="icons"> {currentStep === 2 ? <LocationOn className={classes.check} /> : <LocationOn />} </div>
                                         <div className="text-item">
                                             {currentStep === 2 ? <div className={classes.check} id="name">Adresses légales </div>
                                                 :<div className="name">Adresses légales</div> 
@@ -68,9 +70,9 @@ const LeftBar = ({ children }) => {
                                     </div>
 
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 3 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="icons"> {currentStep === 3 ? <PermDeviceInformationIcon className={classes.check} /> : <PermDeviceInformationIcon />} </div>
                                         <div className="text-item">
-                                            {currentStep === 3 ? <div className={classes.check} id="name">Informations justificatives </div>
+                                            {currentStep === 3 ? <div className={classes.check} id="name">Informations <FontAwesomeIcon icon="fa-solid fa-handshake-angle" /> justificatives </div>
                                                 :<div className="name">Informations justificatives</div> 
                                             }
                                         </div>
