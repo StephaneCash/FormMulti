@@ -54,12 +54,15 @@
 }
 
 .btn-confirm {
-    background-color: #333 !important;
+    background-color: #111b21 !important;
     color: #fff !important;
     border-radius: 5px;
     border: none !important;
     padding: 5px;
-    box-shadow: 1px 1px 3px #cac1c1;
+}
+
+.formB{
+    margin-bottom : 20px !important;
 }
 
 .btn-back:hover {
@@ -79,6 +82,7 @@ video {
     height: 30vh;
 }
 
+
 .btn {
     position: absolute !important;
     left: 35% !important;
@@ -86,7 +90,6 @@ video {
 }
 
 .imgCapturee {
-    border: 2px solid #efefef !important;
     display: block !important;
     margin-left: auto;
     margin-right: auto !important;
@@ -101,6 +104,17 @@ video {
     margin-left: 12px;
     font-size: 0.75rem;
     margin-top: -20px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+}
+
+.checkSexe{
+    color: rgba(0, 0, 0, 0.54);
+    margin-left: 12px;
+    font-size: 0.75rem;
+    margin-top: -50px;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.66;
@@ -153,7 +167,7 @@ video {
     }
 }
 
-@media(max-width: 730px){
+@media(max-width: 1050px){
     .form1.row, .form2 .row, .form3, .form41{
         display: block !important;
     }
@@ -169,5 +183,23 @@ video {
         margin: 12px 5px 0 0 !important;
     }
 }
+
+@media (max-width: 600px){
+    .btn-confirm{
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        margin-right: 0px !important;
+    }
+
+    .btn-back{
+        width: 100% !important;
+    }
+
+    .imgCapturee {
+        width: 100% !important;
+    }
+}
+
+
 
 

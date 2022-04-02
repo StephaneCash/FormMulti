@@ -7,9 +7,9 @@ function FormSubmit() {
 
     return (
         <div>
-            <h4>Merci de vous inscrire 
+            <div className="container text-center">Merci de vous inscrire 
                 {userData.sexe === "M" ? ` Monsieur ${userData.nom} ${userData.postnom}` : ` Madame ${userData.nom} ${userData.postnom}`}
-            </h4>
+            </div>
         </div>
     )
 }

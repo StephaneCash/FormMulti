@@ -14,7 +14,7 @@
     left: 0;
     top: 0;
     z-index: 100;
-    background-color: #111;
+    background-color: #111b21;
     color: #555;
     overflow-y: auto;
     transition: right 0.8s;
@@ -39,7 +39,7 @@
 .main-content {
     position: relative;
     transition: 0.5s;
-    margin-left: 260px;
+    margin-left: 247px;
 }
 
 header {
@@ -58,9 +58,11 @@ header {
 }
 
 main {
-    margin-top: 60px;
-    background-color: #f5f5f5;
-    padding: 14px 20px;
+    padding: 14px 25px;
+}
+
+.PrivateNotchedOutline-root-4:focus{
+    padding-bottom: 5px !important;
 }
 
 .recent {
@@ -70,6 +72,10 @@ main {
     height: auto;
     background-color: #fff;
     transition: left 0.8s;
+}
+
+.MuiInputBase-input:focus{
+    border: red !important;
 }
 
 
@@ -89,11 +95,21 @@ main {
     }
 
     .main-content {
-        margin-left: 60px;
+        margin-left: 50px !important;
     }
 
     .main-content header {
         left: 60px;
         width: cal(100% - 60px);
     }
+}
+
+@media (max-width: 600px){
+   .sidebar{
+       width: 0 !important;
+   }
+
+   .main-content{
+       margin-left: 0 !important;
+   }
 }

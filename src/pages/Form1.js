@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
+import { Check } from '@mui/icons-material';
 
 
 function Form1() {
@@ -63,7 +64,8 @@ function Form1() {
         ) {
             return false;
         } else {
-            setCurrentStep(2)
+            setUserData({ ...userData, 'scroll': 1 });
+            setCurrentStep(2);
         }
     };
 
@@ -82,7 +84,10 @@ function Form1() {
         }
         if (userData.dateDeNaissance) {
             setIsValidDateNaissance(true);
-        }
+        };
+        if (userData.scroll === 2) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        };
     }, [isValidNom, isValidPostnom, isValidLieuDeNaissance, isValidSexe, isValidDateNaissance]);
 
     return (
@@ -96,11 +101,11 @@ function Form1() {
                                 helperText={
                                     click === true && (
                                         <>
-                                            {isValidNom === false ? "Veuillez renseigner un nom svp !" : ""}
+                                            {isValidNom === false ? "Veuillez renseigner un nom svp !" : <Check style={{ fontSize: '15px', color: 'green', }} />}
                                         </>
                                     )
                                 }
-                                label="Nom"
+                                placeholder="Entrer votre nom"
                                 className="form1input"
                                 variant="outlined"
                                 style={{ width: '100%' }}
@@ -114,11 +119,13 @@ function Form1() {
                                 helperText={
                                     click === true && (
                                         <>
-                                            {isValidPostnom === false ? "Veuillez renseigner un postnom svp !" : ""}
+                                            {isValidPostnom === false ? "Veuillez renseigner un postnom svp !" :
+                                                <Check style={{ fontSize: '15px', color: 'green', }} />
+                                            }
                                         </>
                                     )
                                 }
-                                label="Postnom"
+                                placeholder="Postnom"
                                 variant="outlined"
                                 style={{ width: '100%' }}
                                 value={userData['postnom']}
@@ -149,7 +156,9 @@ function Form1() {
                             {
                                 click === true && (
                                     <>
-                                        {isValidSexe === false ? <div className="sexeObligatoire">Veuillez choisir un sexe svp !</div> : ""}
+                                        {isValidSexe === false ? <div className="sexeObligatoire">Veuillez choisir un sexe svp !</div> :
+                                            <Check className="checkSexe" style={{ fontSize: '15px', color: 'green' }} />
+                                        }
                                     </>
                                 )
                             }
@@ -161,11 +170,13 @@ function Form1() {
                                 helperText={
                                     click === true && (
                                         <>
-                                            {isValidLieuDeNaissance === false ? "Veuillez renseigner un lieu de naissance svp !" : ""}
+                                            {isValidLieuDeNaissance === false ? "Veuillez renseigner un lieu de naissance svp !" :
+                                                <Check style={{ fontSize: '15px', color: 'green', }} />
+                                            }
                                         </>
                                     )
                                 }
-                                label="Lieu de naissance"
+                                placeholder="Lieu de naissance"
                                 variant="outlined"
                                 value={userData['lieuDeNaissance']}
                                 onChange={(e) => (setUserData({ ...userData, "lieuDeNaissance": e.target.value }), handleLieuDeNaissance(e))}
@@ -177,7 +188,9 @@ function Form1() {
                                 helperText={
                                     click === true && (
                                         <>
-                                            {isValidDateNaissance === false ? "Veuillez renseigner une date de naissance svp !" : ""}
+                                            {isValidDateNaissance === false ? "Veuillez renseigner une date de naissance svp !" :
+                                                <Check style={{ fontSize: '15px', color: 'green', }} />
+                                            }
                                         </>
                                     )
                                 }
@@ -188,18 +201,18 @@ function Form1() {
                                 style={{ width: '100%' }}
                             />
                         </div>
-                    </div>
-                </div>
-                <div className="col-12 formB container">
-                    <div className="row">
-                        <div className="col-12">
-                            <Button
-                                onClick={stepNext}
-                                className='mb-3 btn-confirm'
-                                style={{ float: "right" }}
-                            >
-                                Suivant
-                            </Button>
+                        <div className="col-12 formB container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <Button
+                                        onClick={stepNext}
+                                        className='btn-confirm'
+                                        style={{ float: "right" }}
+                                    >
+                                        Suivant
+                                    </Button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

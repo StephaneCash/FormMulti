@@ -1,23 +1,13 @@
-import { Container, makeStyles, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { multiStepContext } from "../StepContext";
 import React, { useContext, useState } from 'react';
 import "../css/LeftBar.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Check, Dehaze } from "@mui/icons-material";
+import { Check } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import $ from "jquery";
 
 
 const useStyles = makeStyles((theme) => ({
-    container: {
-        paddingTop: theme.spacing(8),
-        backgroundColor: "#222",
-        height: "100vh",
-        color: '#555',
-        border: "1px solid silver",
-        position: "fixed",
-        width: "18%",
-    },
     item: {
         display: 'flex',
         alignItems: 'center',
@@ -42,12 +32,6 @@ const LeftBar = ({ children }) => {
 
     const { currentStep } = useContext(multiStepContext);
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => {
-        setIsOpen(!isOpen);
-    };
-
     return (
         <>
             <div className='sidebar' style={{ width: '248px' }}>
@@ -57,7 +41,7 @@ const LeftBar = ({ children }) => {
                         <div className="main-container">
                             <motion.div animate={{ width: "248px" }} className="sidebar" id="sidebar">
 
-                                <div className="top-section">
+                                <div className="top-section mt-4">
                                     <h1 className="logo">Azure Bank</h1>
 
                                     <div className="bars">

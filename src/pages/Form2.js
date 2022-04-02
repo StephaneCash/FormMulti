@@ -98,6 +98,12 @@ function Form2() {
         if (userData.nationalite) {
             setIsValidNationalite(true);
         }
+        if (userData.scroll === 1) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+        if (userData.scroll === 4) {
+            return window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
     }, [isValidEmail, isValidNumber, isValidPays, isValidNationalite]);
 
     let paysRempli = "";
@@ -128,6 +134,7 @@ function Form2() {
             return false;
         } else {
             setCurrentStep(3);
+            setUserData({ ...userData, 'scroll': 3 })
         }
     };
 
@@ -152,7 +159,7 @@ function Form2() {
                                             }
                                         </>
                                     }
-                                    label="Adresse email"
+                                    placeholder="Adresse email"
                                     variant="outlined"
                                     style={{ width: '100%' }}
                                     value={userData['email']}
@@ -174,7 +181,7 @@ function Form2() {
                                             }
                                         </>
                                     }
-                                    label="Numéro de téléphone"
+                                    placeholder="Numéro de téléphone"
                                     id="outlined-start-adornment"
                                     variant="outlined"
                                     value={userData['numroPhone']}
@@ -184,7 +191,7 @@ function Form2() {
                                             {phoneCodePays ? "+" + codeFormat : 'CODE'}
                                         </InputAdornment>,
                                     }}
-                                    onChange={(e) => (setUserData({ ...userData, "numroPhone": e.target.value }), handleNumPhone(e))}
+                                    onChange={(e) => (setUserData({ ...userData, 'numroPhone': e.target.value }), handleNumPhone(e))}
                                 />
                             </div>
 
@@ -201,11 +208,15 @@ function Form2() {
                                             <>
                                                 {
                                                     pays.map((val, index) => {
-                                                        return (
-                                                            <>
-                                                                <option key={index}>{val.name}</option>
-                                                            </>
-                                                        )
+                                                        if (val.name === "Congo The Democratic Republic Of The") {
+                                                            return (
+                                                                <>
+                                                                    <option key={index}>
+                                                                        {val.name}
+                                                                    </option>
+                                                                </>
+                                                            )
+                                                        }
                                                     })
                                                 }
                                             </> :
@@ -213,11 +224,15 @@ function Form2() {
                                                 <option>--Pays--</option>
                                                 {
                                                     pays.map((val, index) => {
-                                                        return (
-                                                            <>
-                                                                <option key={index}>{val.name}</option>
-                                                            </>
-                                                        )
+                                                        if (val.name === "Congo The Democratic Republic Of The") {
+                                                            return (
+                                                                <>
+                                                                    <option key={index}>
+                                                                        {val.name}
+                                                                    </option>
+                                                                </>
+                                                            )
+                                                        }
                                                     })
                                                 }
                                             </>
@@ -271,28 +286,29 @@ function Form2() {
                                 }
                             </div>
                         </div>
-                    </div>
-                    <div className="col-12 container">
-                        <div className="row">
-                            <div className="col-12">
+                        <div className="col-12 container">
+                            <div className="row">
+                                <div className="col-12">
 
-                                <Button
-                                    className='mb-3 btn-confirm'
-                                    type="submit"
-                                    style={{ marginLeft: "10px", float: "right" }}
-                                >
-                                    Suivant
-                                </Button>
-                                <Button
-                                    className='mb-3 btn-back'
-                                    onClick={() => setCurrentStep(1)}
-                                    style={{ float: "right" }}
-                                >
-                                    Retour
-                                </Button>
+                                    <Button
+                                        className='mb-3 btn-confirm'
+                                        type="submit"
+                                        style={{ marginLeft: "10px", float: "right", marginRight: "-10px" }}
+                                    >
+                                        Suivant
+                                    </Button>
+                                    <Button
+                                        className='mb-3 btn-back'
+                                        onClick={() => (setCurrentStep(1), setUserData({ ...userData, 'scroll': 2 }))}
+                                        style={{ float: "right" }}
+                                    >
+                                        Retour
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </form>
             </Card>
         </>
