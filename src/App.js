@@ -9,21 +9,26 @@ import { multiStepContext } from "./StepContext";
 import LeftBar from './includes/LeftBar';
 import "./css/Dash.css";
 import FormSubmit from './pages/FormSubmit';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import Form0 from "./pages/Form0";
 
 function App() {
 
   const { currentStep } = useContext(multiStepContext);
 
   function showStep(step) {
-    if (step === 1) {
+    if(step=== 1){
+      return <Form0 />
+    }
+    else if (step === 2) {
       return <Form1 />
-    } else if (step === 2) {
-      return <Form2 />
     } else if (step === 3) {
-      return <Form3 />
+      return <Form2 />
     } else if (step === 4) {
-      return <Form4 />;
+      return <Form3 />
     } else if (step === 5) {
+      return <Form4 />;
+    } else if (step === 6) {
       return <FormSubmit />
     };
   };
@@ -45,6 +50,14 @@ function App() {
                     <StepLabel></StepLabel>
                   </Step>
 
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
+
+                  <Step>
+                    <StepLabel></StepLabel>
+                  </Step>
+                  
                   <Step>
                     <StepLabel></StepLabel>
                   </Step>

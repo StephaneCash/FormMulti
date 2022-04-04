@@ -133,7 +133,7 @@ function Form2() {
         if (isValidEmail === false || isValidNumber === false || isValidPays === false || isValidNationalite === false) {
             return false;
         } else {
-            setCurrentStep(3);
+            setCurrentStep(4);
             setUserData({ ...userData, 'scroll': 3 })
         }
     };
@@ -299,7 +299,7 @@ function Form2() {
                                     </Button>
                                     <Button
                                         className='mb-3 btn-back'
-                                        onClick={() => (setCurrentStep(1), setUserData({ ...userData, 'scroll': 2 }))}
+                                        onClick={() => (setCurrentStep(2), setUserData({ ...userData, 'scroll': 2 }))}
                                         style={{ float: "right" }}
                                     >
                                         Retour

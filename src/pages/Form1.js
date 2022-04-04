@@ -65,7 +65,7 @@ function Form1() {
             return false;
         } else {
             setUserData({ ...userData, 'scroll': 1 });
-            setCurrentStep(2);
+            setCurrentStep(3);
         }
     };
 
@@ -88,7 +88,7 @@ function Form1() {
         if (userData.scroll === 2) {
             return window.scrollTo({ top: 0, behavior: 'smooth' })
         };
-    }, [isValidNom, isValidPostnom, isValidLieuDeNaissance, isValidSexe, isValidDateNaissance]);
+    }, [userData.nom, userData.postnom, userData.lieuDeNaissance, userData.sexe, userData.dateDeNaissance, userData.scroll]);
 
     return (
         <>

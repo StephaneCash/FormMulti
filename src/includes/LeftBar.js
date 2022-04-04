@@ -7,6 +7,7 @@ import { Check, AccountCircle, LocationOn } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -55,43 +56,51 @@ const LeftBar = ({ children }) => {
                                     <div className="link">
                                         <div className="icons"> {currentStep === 1 ? <AccountCircle className={classes.check} /> : <AccountCircle />} </div>
                                         <div className="text-item">
-                                            {currentStep === 1 ? <div className={classes.check} id="name">Informations personnelles </div>
-                                                :<span className="name">formations personnelles </span>
+                                            {currentStep === 1 ? <div className={classes.check} id="name">Choix de l'expérience </div>
+                                                : <span className="name">Choix de l'expérience </span>
                                             }
                                         </div>
                                     </div>
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 2 ? <LocationOn className={classes.check} /> : <LocationOn />} </div>
+                                        <div className="icons"> {currentStep === 2 ? <AccountCircle className={classes.check} /> : <AccountCircle />} </div>
                                         <div className="text-item">
-                                            {currentStep === 2 ? <div className={classes.check} id="name">Adresses légales </div>
-                                                :<div className="name">Adresses légales</div> 
+                                            {currentStep === 2 ? <div className={classes.check} id="name">Informations personnelles </div>
+                                                : <span className="name">formations personnelles </span>
                                             }
                                         </div>
                                     </div>
-
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 3 ? <PermDeviceInformationIcon className={classes.check} /> : <PermDeviceInformationIcon />} </div>
+                                        <div className="icons"> {currentStep === 3 ? <LocationOn className={classes.check} /> : <LocationOn />} </div>
                                         <div className="text-item">
-                                            {currentStep === 3 ? <div className={classes.check} id="name">Informations <FontAwesomeIcon icon="fa-solid fa-handshake-angle" /> justificatives </div>
-                                                :<div className="name">Informations justificatives</div> 
-                                            }
-                                        </div>
-                                    </div>
-
-                                    <div className="link">
-                                        <div className="icons"> {currentStep === 4 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
-                                        <div className="text-item">
-                                            {currentStep === 4 ? <div className={classes.check} id="name">Signature du contrat </div>
-                                                : <div className="name">Signature du contrat</div> 
+                                            {currentStep === 3 ? <div className={classes.check} id="name">Adresses légales </div>
+                                                : <div className="name">Adresses légales</div>
                                             }
                                         </div>
                                     </div>
 
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 5 ? <Check className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="icons"> {currentStep === 4 ? <PermDeviceInformationIcon className={classes.check} /> : <PermDeviceInformationIcon />} </div>
                                         <div className="text-item">
-                                            {currentStep === 5 ? <div className={classes.check} id="name">Inscription terminée </div>
-                                                :<div className="name">Inscription terminée</div> 
+                                            {currentStep === 4 ? <div className={classes.check} id="name">Informations justificatives </div>
+                                                : <div className="name"> Information justificatives </div>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div className="link">
+                                        <div className="icons"> {currentStep === 5 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="text-item">
+                                            {currentStep === 5 ? <div className={classes.check} id="name">Signature du contrat </div>
+                                                : <div className="name">Signature du contrat</div>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div className="link">
+                                        <div className="icons"> {currentStep === 6 ? <Check className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="text-item">
+                                            {currentStep === 6 ? <div className={classes.check} id="name">Inscription terminée </div>
+                                                : <div className="name">Inscription terminée</div>
                                             }
                                         </div>
                                     </div>
