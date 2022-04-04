@@ -42,9 +42,6 @@ function App() {
             <div className="col-12" style={{ marginTop: "15px" }}>
               <div className="container center-stepper">
                 <Stepper style={{ width: "100%" }} activeStep={currentStep - 1} orientation='horizontal'>
-                  <Step>
-                    <StepLabel></StepLabel>
-                  </Step>
 
                   <Step>
                     <StepLabel></StepLabel>

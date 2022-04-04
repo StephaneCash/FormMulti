@@ -7,7 +7,7 @@ import { Check, AccountCircle, LocationOn } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faHandshakeAngle } from '@fortawesome/free-solid-svg-icons'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,20 +44,20 @@ const LeftBar = ({ children }) => {
                         <div className="main-container">
                             <motion.div animate={{ width: "248px" }} className="sidebar" id="sidebar">
 
-                                <div className="top-section mt-4 mb-5">
-                                    <h1 className="logo">Azure Bank</h1>
+                                <div className="mt-4 mb-5">
+                                    <h1 className="logo"></h1>
 
                                     <div className="bars">
-                                        <span style={{ cursor: "pointer", color: "#fff" }}>Logo img</span>
+                                        <span style={{ cursor: "pointer", color: "#fff" }}></span>
                                     </div>
                                 </div>
 
                                 <section className="routes" style={{ marginTop: "10px" }}>
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 1 ? <AccountCircle className={classes.check} /> : <AccountCircle />} </div>
+                                        <div className="icons"> {currentStep === 1 ? <FontAwesomeIcon icon="fa-brands fa-buromobelexperte" className={classes.check} /> : <AccountCircle />} </div>
                                         <div className="text-item">
                                             {currentStep === 1 ? <div className={classes.check} id="name">Choix de l'expérience </div>
-                                                : <span className="name">Choix de l'expérience </span>
+                                                : <span className="name">Choix de l'expérience  </span>
                                             }
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@ const LeftBar = ({ children }) => {
                                     </div>
 
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 5 ? <ArrowRightAltIcon className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="icons"> {currentStep === 5 ? <FontAwesomeIcon icon={faHandshakeAngle} className={classes.check} /> : <FontAwesomeIcon icon={faHandshakeAngle} />} </div>
                                         <div className="text-item">
                                             {currentStep === 5 ? <div className={classes.check} id="name">Signature du contrat </div>
                                                 : <div className="name">Signature du contrat</div>
