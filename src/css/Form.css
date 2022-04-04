@@ -155,6 +155,75 @@ video {
     height: 7.6vh !important;
 }
 
+.cardForm0{
+    height: 100vh !important;
+    width: 63% !important;
+    padding: 25px !important;
+    box-shadow: 2px 2px 7px silver !important;
+    cursor: pointer;
+}
+
+.numberPrenium{
+    font-size: 16px !important;
+    margin-top: 15px !important;
+    font-weight: none !important;
+}
+
+.btnCarteStandard{
+    background-color: red !important;
+    color: #fff !important;
+    width: 100%;
+    margin-top: 50px !important;
+}
+
+.textInterne{
+    margin-left: 5px !important;
+    margin-bottom: 10px !important;
+}
+
+.checkIcon{
+    font-weight: bold !important;
+    font-size: 18px !important;
+    margin-top: 5px !important;
+}
+
+.bodyCard1{
+}
+
+.textStandard{
+    margin-top: 45px !important;
+}
+
+.textStandard li{
+    margin-top: 4px !important;
+}
+
+.imageCardStandard{
+    width:95% !important;
+    height: 20vh !important;
+    border-radius: 5px !important;
+    box-shadow: 2px 2px 8px silver;
+}
+
+.standH3{
+    margin-top: -8px !important;
+    margin-bottom: -1px !important;
+}
+
+.offre18ans{
+    border-radius: 7px;
+    width: 100% !important;
+    height: 11.4vh !important;
+    background-color: #e6eef9;
+    padding: 10px !important;
+    font-size: 13px !important;
+    margin-left: auto !important;
+}
+
+.carteStandardText{
+    margin-left: 10px !important;
+}
+
 @media(max-width:1205px) {
     .sidebar {
         width: 50px !important;
