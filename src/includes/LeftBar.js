@@ -61,7 +61,7 @@ const LeftBar = ({ children }) => {
                                             }
                                         </div>
                                     </div>
-                                    
+
                                     <div className="link">
                                         <div className="icons"> {currentStep === 2 ? <PersonOutline className={classes.check} /> : <PersonOutline />} </div>
                                         <div className="text-item">
@@ -70,6 +70,7 @@ const LeftBar = ({ children }) => {
                                             }
                                         </div>
                                     </div>
+                                    
                                     <div className="link">
                                         <div className="icons"> {currentStep === 3 ? <LocationOn className={classes.check} /> : <LocationOn />} </div>
                                         <div className="text-item">
