@@ -11,14 +11,16 @@ function Form0() {
 
   const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
 
+  console.log("DATA ::: ", userData)
+
   return (
-    <div className="container">
+    <div className="container-princial">
       <div className="col-12">
         <div className="row">
-          <div className="col-6">
+          <div className="col-6 card1">
             <Card sx={{ maxWidth: 345 }} className="cardForm0">
               <div className="row">
-                <div className="col-5">
+                <div className="col-4 col4">
                   <img src={prenium} className="imageCardStandard" />
                 </div>
                 <div className="col-6 carteStandardText">
@@ -30,40 +32,50 @@ function Form0() {
                   </div>
                 </div>
               </div>
-              <div className="bodyCard1">
-                <h6 className="mt-4">Compte et carte Standard : <br />
-                  l'indispensable de la banque mobile
-                </h6>
 
-                <div className="textStandard">
-                  <div className="d-flex">
-                    <Check className="checkIcon" />
-                    <div className="textInterne">Paiements et retraits gratuits en RDC et en zone franc</div>
-                  </div>
-                  <div className="d-flex">
-                    <Check className="checkIcon" />
-                    <div className="textInterne">Actualisation du solde de votre compte en temps réel</div>
-                  </div>
-                  <div className="d-flex">
-                    <Check className="checkIcon" />
-                    <div className="textInterne">Blocage temporaire de la carte en cas de besoin</div>
-                  </div>
-                  <div className="d-flex">
-                    <Check className="checkIcon" />
-                    <div className="textInterne">Code secret de carte personnalisable</div>
+              <div className="col-12">
+                <div className="bodyCard1">
+                  <h6 className="mt-4">Compte et carte Standard : <br />
+                    l'indispensable de la banque mobile
+                  </h6>
+
+                  <div className="textStandard">
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Paiements et retraits gratuits en RDC et en zone franc</div>
+                    </div>
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Actualisation du solde de votre compte en temps réel</div>
+                    </div>
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Blocage temporaire de la carte en cas de besoin</div>
+                    </div>
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
                   </div>
                 </div>
               </div>
+
               <div className="col-12">
-                <Button type="button" className="btnCarteStandard">Choisir la carte Standard</Button>
+                <Button type="button"
+                  className="btnCarteStandard"
+                  onClick={() => setUserData({ ...userData, 'choixCarte': 'Carte_standard' })}>
+                  Choisir la carte Standard
+                </Button>
               </div>
-              <div className="text-center mt-3" style={{ color: 'red' }}>Découvrir tous les avantages</div>
+              <div className="col-12">
+                <div className="text-center mt-3" style={{ color: 'red' }}>Découvrir tous les avantages</div>
+              </div>
             </Card>
           </div>
           <div className="col-6">
             <Card sx={{ maxWidth: 345 }} className="cardForm0">
               <div className="row">
-                <div className="col-5">
+                <div className="col-4 col4">
                   <img src={standardCard} className="imageCardStandard" />
                 </div>
                 <div className="col-6 carteStandardText">
@@ -75,45 +87,59 @@ function Form0() {
                   </div>
                 </div>
               </div>
-              <div className="col-12 offre18ans mt-4">
-                <div className="row">
-                  <div className="col-4">
-                    <img src={offre18} />
+              <div className="col-12">
+                <div className="bodyCard2">
+                  <div className="col-12">
+                    <div className="col-12 offre18ans mt-4">
+                      <div className="row">
+                        <div className="col-4">
+                          <img src={offre18} />
+                        </div>
+                        <div className="col-8">
+                          Offre 18-25 ans : votre carte Premium à 4,99 €/mois pendant 1 an
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="col-8">
-                    Offre 18-25 ans : votre carte Premium à 4,99 €/mois pendant 1 an
+
+                  <div className="col-12">
+                    <h6 className="mt-4">Compte et carte Standard : <br />
+                      le top de la banque mobile
+                    </h6>
                   </div>
-                </div>
-              </div>
 
-              <h6 className="mt-4">Compte et carte Standard : <br />
-                le top de la banque mobile
-              </h6>
-
-              <div className="textStandard">
-                <div className="d-flex">
-                  <Check className="checkIcon" />
-                  <div className="textInterne">Paiements et retraits gratuits en France et partout dans le monde.</div>
-                </div>
-                <div className="d-flex">
-                  <Check className="checkIcon" />
-                  <div className="textInterne">Assurance protection des achats incluse pour vous et vos proches.</div>
-                </div>
-                <div className="d-flex">
-                  <Check className="checkIcon" />
-                  <div className="textInterne">Assurances voyage et assistance incluses pour vous et vos proches</div>
-                </div>
-                <div className="d-flex">
-                  <Check className="checkIcon" />
-                  <div className="textInterne">Cashback sur vos achats (6) et factures Orange.</div>
-                </div>
-                <div className="d-flex">
-                  <Check className="checkIcon" />
-                  <div className="textInterne">Accès aux programmes privilèges Mastercard.</div>
+                  <div className="textStandard">
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Paiements et retraits gratuits en France et partout dans le monde.</div>
+                    </div>
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Assurance protection des achats incluse pour vous et vos proches.</div>
+                    </div>
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Assurances voyage et assistance incluses pour vous et vos proches</div>
+                    </div>
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Cashback sur vos achats (6) et factures Orange.</div>
+                    </div>
+                    <div className="d-flex">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Accès aux programmes privilèges Mastercard.</div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="col-12">
-                <Button type="button" className="btnCarteStandard">Choisir la carte Standard</Button>
+                <Button
+                  type="button"
+                  className="btnCarteStandard"
+                  onClick={() => setUserData({ ...userData, 'choixCarte': 'carte_prenium' })}
+                >
+                  Choisir la carte Prenium
+                </Button>
               </div>
               <div className="text-center mt-3" style={{ color: 'red' }}>Découvrir tous les avantages</div>
             </Card>

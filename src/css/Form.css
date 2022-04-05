@@ -129,6 +129,11 @@ video {
     color: rgba(0, 0, 0, 0.54);
 }
 
+.container-princial{
+    width: auto !important;
+    margin: auto 16% !important;
+}
+
 .sexeOdbligatoire {
     color: rgba(0, 0, 0, 0.54);
     margin-left: 12px;
@@ -156,11 +161,12 @@ video {
 }
 
 .cardForm0{
-    height: 100vh !important;
-    width: 63% !important;
+    height: auto !important;
+    width: 100% !important;
     padding: 25px !important;
     box-shadow: 2px 2px 7px silver !important;
     cursor: pointer;
+    border: 1px solid #ccc !important;
 }
 
 .numberPrenium{
@@ -173,7 +179,7 @@ video {
     background-color: red !important;
     color: #fff !important;
     width: 100%;
-    margin-top: 50px !important;
+    margin-top: 0px !important;
 }
 
 .textInterne{
@@ -188,7 +194,13 @@ video {
 }
 
 .bodyCard1{
-    
+    height: auto;
+    margin-bottom: 13.4rem
+}
+
+.bodyCard2{
+    height: auto;
+    margin-bottom: 45px;
 }
 
 .textStandard{
@@ -200,10 +212,13 @@ video {
 }
 
 .imageCardStandard{
-    width:95% !important;
-    height: 20vh !important;
+    width: 100% !important;
     border-radius: 5px !important;
     box-shadow: 2px 2px 8px silver;
+    max-width: 103px;
+    min-height: auto !important;
+    position: relative;
+    align-self: flex-start;
 }
 
 .standH3{
@@ -214,7 +229,7 @@ video {
 .offre18ans{
     border-radius: 7px;
     width: 100% !important;
-    height: 11.4vh !important;
+    height: auto !important;
     background-color: #e6eef9;
     padding: 10px !important;
     font-size: 13px !important;
