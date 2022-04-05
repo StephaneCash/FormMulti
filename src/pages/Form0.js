@@ -20,7 +20,7 @@ function Form0() {
     <div className="container-princial">
       <div className="col-12">
         <div className="row">
-          
+
           <div className="col-6 card1">
             <Card sx={{ maxWidth: 345 }} className="cardForm0">
               <div className="row">
@@ -61,6 +61,7 @@ function Form0() {
                       <div className="textInterne">Code secret de carte personnalisable</div>
                     </div>
                   </div>
+
                 </div>
               </div>
 
@@ -71,6 +72,7 @@ function Form0() {
                   C<span className="textBtn">hoisir la carte Standard</span> {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
+              
               <div className="col-12">
                 <div className="text-center mt-3" style={{ color: 'red' }}>
                   <Link to='/avantages' className='linkAvantages'>
