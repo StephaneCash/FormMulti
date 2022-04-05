@@ -72,7 +72,7 @@ function Form0() {
                   C<span className="textBtn">hoisir la carte Standard</span> {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
-              
+
               <div className="col-12">
                 <div className="text-center mt-3" style={{ color: 'red' }}>
                   <Link to='/avantages' className='linkAvantages'>
@@ -80,6 +80,7 @@ function Form0() {
                   </Link>
                 </div>
               </div>
+              
             </Card>
           </div>
           <div className="col-6">
