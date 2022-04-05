@@ -2,7 +2,9 @@ import React from 'react'
 
 function DetailAvantageCarte() {
   return (
-    <div>DetailAvantageCarte</div>
+    <div>
+        <h2 className="text-center">Comparer les cartes et leurs <br /> fonctionnalités</h2>
+    </div>
   )
 }
 
