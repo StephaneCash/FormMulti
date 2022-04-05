@@ -59,8 +59,8 @@ const LeftBar = ({ children }) => {
                                             {currentStep === 1 ? <div className={classes.check} id="name">Choix de l'expérience </div>
                                                 : <span className="name">Choix de l'expérience  </span>
                                             }
-                                            
                                         </div>
+                                        
                                     </div>
                                     <div className="link">
                                         <div className="icons"> {currentStep === 2 ? <PersonOutline className={classes.check} /> : <PersonOutline />} </div>
