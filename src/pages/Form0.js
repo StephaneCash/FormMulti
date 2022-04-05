@@ -20,6 +20,7 @@ function Form0() {
     <div className="container-princial">
       <div className="col-12">
         <div className="row">
+          
           <div className="col-6 card1">
             <Card sx={{ maxWidth: 345 }} className="cardForm0">
               <div className="row">
