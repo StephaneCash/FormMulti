@@ -221,6 +221,10 @@ video {
     align-self: flex-start;
 }
 
+.textBtn{
+    text-transform: lowercase !important;
+}
+
 .standH3{
     margin-top: -8px !important;
     margin-bottom: -1px !important;
@@ -238,6 +242,11 @@ video {
 
 .carteStandardText{
     margin-left: 10px !important;
+}
+
+.linkAvantages{
+    text-decoration: none !important;
+    color: red !important;
 }
 
 @media(max-width:1205px) {

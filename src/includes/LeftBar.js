@@ -3,7 +3,7 @@ import { multiStepContext } from "../StepContext";
 import React, { useContext } from 'react';
 import "../css/LeftBar.css";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Check, AccountCircle, LocationOn } from "@mui/icons-material";
+import { Check, AccountCircle, LocationOn, Accessibility, PersonOutline } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import PermDeviceInformationIcon from '@mui/icons-material/PermDeviceInformation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -54,7 +54,7 @@ const LeftBar = ({ children }) => {
 
                                 <section className="routes" style={{ marginTop: "10px" }}>
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 1 ? <FontAwesomeIcon icon="fa-brands fa-buromobelexperte" className={classes.check} /> : <AccountCircle />} </div>
+                                        <div className="icons"> {currentStep === 1 ? <Accessibility className={classes.check} /> : <Accessibility />} </div>
                                         <div className="text-item">
                                             {currentStep === 1 ? <div className={classes.check} id="name">Choix de l'expérience </div>
                                                 : <span className="name">Choix de l'expérience  </span>
@@ -62,7 +62,7 @@ const LeftBar = ({ children }) => {
                                         </div>
                                     </div>
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 2 ? <AccountCircle className={classes.check} /> : <AccountCircle />} </div>
+                                        <div className="icons"> {currentStep === 2 ? <PersonOutline className={classes.check} /> : <PersonOutline />} </div>
                                         <div className="text-item">
                                             {currentStep === 2 ? <div className={classes.check} id="name">Informations personnelles </div>
                                                 : <span className="name">formations personnelles </span>
@@ -97,7 +97,7 @@ const LeftBar = ({ children }) => {
                                     </div>
 
                                     <div className="link">
-                                        <div className="icons"> {currentStep === 6 ? <Check className={classes.check} /> : <ArrowRightAltIcon />} </div>
+                                        <div className="icons"> {currentStep === 6 ? <Check className={classes.check} /> : <Check />} </div>
                                         <div className="text-item">
                                             {currentStep === 6 ? <div className={classes.check} id="name">Inscription terminée </div>
                                                 : <div className="name">Inscription terminée</div>

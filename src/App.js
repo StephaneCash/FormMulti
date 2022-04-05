@@ -10,7 +10,7 @@ import LeftBar from './includes/LeftBar';
 import "./css/Dash.css";
 import FormSubmit from './pages/FormSubmit';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-import Form0 from "./pages/Form0";
+import RoutesApp from "./RoutesApp"
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
 
   function showStep(step) {
     if(step=== 1){
-      return <Form0 />
+      return <RoutesApp />
     }
     else if (step === 2) {
       return <Form1 />

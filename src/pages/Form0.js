@@ -1,15 +1,18 @@
 import { Button, Card, } from '@material-ui/core';
-import { Check, Euro } from '@mui/icons-material';
+import { Check, CheckCircleTwoTone, Euro } from '@mui/icons-material';
 import React, { useContext, useState, useEffect } from 'react'
 import { multiStepContext } from "../StepContext";
 import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
 import offre18 from "../images/offre18.png";
+import { Link } from 'react-router-dom';
 
 
 function Form0() {
 
   const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
+
+  const [etatBtn, setEtatBtn] = useState(1);
 
   console.log("DATA ::: ", userData)
 
@@ -63,12 +66,16 @@ function Form0() {
               <div className="col-12">
                 <Button type="button"
                   className="btnCarteStandard"
-                  onClick={() => setUserData({ ...userData, 'choixCarte': 'Carte_standard' })}>
-                  Choisir la carte Standard
+                  onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}>
+                  C<span className="textBtn">hoisir la carte Standard</span> {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
               <div className="col-12">
-                <div className="text-center mt-3" style={{ color: 'red' }}>Découvrir tous les avantages</div>
+                <div className="text-center mt-3" style={{ color: 'red' }}>
+                  <Link to='/avantages' className='linkAvantages'>
+                    Découvrir tous les avantages
+                  </Link>
+                </div>
               </div>
             </Card>
           </div>
@@ -136,17 +143,42 @@ function Form0() {
                 <Button
                   type="button"
                   className="btnCarteStandard"
-                  onClick={() => setUserData({ ...userData, 'choixCarte': 'carte_prenium' })}
+                  onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_prenium' }, setEtatBtn(3)))}
                 >
-                  Choisir la carte Prenium
+                  C<span className='textBtn'>hoisir la carte Prenium</span> {etatBtn === 3 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
-              <div className="text-center mt-3" style={{ color: 'red' }}>Découvrir tous les avantages</div>
+              <div className="text-center mt-3" style={{ color: 'red' }}>
+                <Link to='/avantages' className='linkAvantages'>
+                  Découvrir tous les avantages
+                </Link>
+              </div>
             </Card>
           </div>
         </div>
       </div>
-      <Button onClick={() => setCurrentStep(2)}>Suivant</Button>
+      <div className="col-12 text-center mt-4 mb-4">
+
+        {etatBtn === 2 || etatBtn === 3 ?
+
+          <Button variant="contained"
+            style={{ backgroundColor: '#111b21', color: "#fff" }}
+            onClick={() => setCurrentStep(2)}
+          >
+            S<span className="textBtn">uivant</span>
+          </Button>
+
+          :
+
+          <Button variant="contained"
+            disabled
+          >
+            S<span className="textBtn">uivant</span>
+          </Button>
+
+        }
+
+      </div>
     </div>
   )
 }
