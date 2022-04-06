@@ -204,12 +204,21 @@ function Form1() {
                         <div className="col-12 formB container">
                             <div className="row">
                                 <div className="col-12">
+
                                     <Button
                                         onClick={stepNext}
                                         className='btn-confirm'
+                                        style={{ float: "right", marginLeft: "10px" }}
+                                    >
+                                        S<span className="textBtn">uivant</span>
+                                    </Button>
+
+                                    <Button
+                                        onClick={()=>setCurrentStep(1)}
+                                        className='btn-back'
                                         style={{ float: "right" }}
                                     >
-                                        Suivant
+                                        R<span className="textBtn">etour</span>
                                     </Button>
                                 </div>
                             </div>
