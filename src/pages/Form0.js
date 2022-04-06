@@ -1,5 +1,5 @@
 import { Button, Card, } from '@material-ui/core';
-import { Check, CheckCircleTwoTone, Euro } from '@mui/icons-material';
+import { Check, CheckCircleTwoTone } from '@mui/icons-material';
 import React, { useContext, useState, useEffect } from 'react'
 import { multiStepContext } from "../StepContext";
 import prenium from "../images/prenium.png";
@@ -31,8 +31,8 @@ function Form0() {
                   <h3>Carte</h3>
                   <h3 className="standH3">Standard</h3>
                   <div className="d-flex">
-                    <span style={{ fontSize: '30px' }}>0</span>
-                    <div className="col-6 numberPrenium"><Euro style={{ fontSize: '15px' }} />/mois</div>
+                    <span style={{ fontSize: '30px' }}>0 </span>
+                    <div className="col-6 numberPrenium"> €/mois</div>
                   </div>
                 </div>
               </div>
@@ -93,8 +93,8 @@ function Form0() {
                   <h3>Carte</h3>
                   <h3 className="standH3">Prenium</h3>
                   <div className="d-flex">
-                    <span style={{ fontSize: '30px' }}>7,99</span>
-                    <div className="col-6 numberPrenium"><Euro style={{ fontSize: '15px' }} />/mois</div>
+                    <span style={{ fontSize: '30px' }}>7,99 </span>
+                    <div className="col-6 numberPrenium"> €/mois</div>
                   </div>
                 </div>
               </div>

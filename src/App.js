@@ -10,7 +10,8 @@ import LeftBar from './includes/LeftBar';
 import "./css/Dash.css";
 import FormSubmit from './pages/FormSubmit';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-import RoutesApp from "./RoutesApp"
+import RoutesApp from "./RoutesApp";
+import "./App.css";
 
 function App() {
 
