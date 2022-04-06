@@ -1,8 +1,9 @@
-import { Check, Close, KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
+import { Check, Close, KeyboardArrowDown, KeyboardArrowUp, KeyboardBackspace } from '@mui/icons-material';
 import React, { useState } from 'react';
 import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
 import "../css/DetailAvantageCarte.css"
+import { Link } from 'react-router-dom';
 
 function DetailAvantageCarte() {
 
@@ -14,6 +15,10 @@ function DetailAvantageCarte() {
 
   return (
     <div className="col-12">
+      <div className="btnRetour">
+        <Link to="/"><KeyboardBackspace style={{marginTop: '-2px'}} /> Retour</Link>
+      </div>
+
       <h2 className="text-center mt-4">Comparer les cartes et leurs <br /> fonctionnalités</h2>
 
       <div className="col-12 mt-5">
