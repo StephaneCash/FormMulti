@@ -197,6 +197,8 @@ video {
     padding: 10px !important;
     background-color: red !important;
     color: #fff;
+    border-radius: 7px;
+    font-weight: bold !important;
 }
 
 .bodyCard1{

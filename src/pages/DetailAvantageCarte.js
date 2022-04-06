@@ -18,13 +18,13 @@ function DetailAvantageCarte() {
                   <img src={standardCard} className="imageCardStandard" />
                 </div>
                 <div className="col-12">
-                  Carte Standard
+                  <h4>Carte Standard</h4>
                   <div>
                     0<Euro style={{ fontSize: '15px' }} />/mois
                   </div>
 
                   <div className="choixCarte">
-                    <h5>Choisir cette carte</h5>
+                    <h6 className="text-center">Choisir cette <br />carte</h6>
                   </div>
                 </div>
               </div>
