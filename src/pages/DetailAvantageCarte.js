@@ -1,4 +1,4 @@
-import { Euro } from '@mui/icons-material';
+import { Close, Euro } from '@mui/icons-material';
 import React from 'react';
 import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
@@ -8,7 +8,7 @@ function DetailAvantageCarte() {
     <div className="col-12">
       <h2 className="text-center">Comparer les cartes et leurs <br /> fonctionnalités</h2>
 
-      <div className="col-12">
+      <div className="col-12 mt-5">
         <div className="row">
           <div className="col-6"></div>
           <div className="col-6">
@@ -50,8 +50,21 @@ function DetailAvantageCarte() {
       </div>
 
       <div className="col-12 colonne2">
-        <h4 className="mt-5 mb-4" style={{ marginLeft: '15px' }}>Voyages et assurances</h4>
-        <hr />
+        <table>
+          <thead>
+            <tr>
+              <th>voyages et assurances</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Assurance protection des achats</td>
+              <td><Close style={{color: 'silver'}} /> </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   )
