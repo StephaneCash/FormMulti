@@ -1,4 +1,4 @@
-import { Close, Euro } from '@mui/icons-material';
+import { Check, Close, Euro } from '@mui/icons-material';
 import React from 'react';
 import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
@@ -50,8 +50,8 @@ function DetailAvantageCarte() {
       </div>
 
       <div className="col-12 colonne2">
-        <table>
-          <thead>
+        <table className="table table-borderless">
+          <thead className="thead">
             <tr>
               <th>voyages et assurances</th>
               <th></th>
@@ -61,7 +61,32 @@ function DetailAvantageCarte() {
           <tbody>
             <tr>
               <td>Assurance protection des achats</td>
-              <td><Close style={{color: 'silver'}} /> </td>
+              <td><Close style={{color: 'silver', fontWeight: '700'}} /> </td>
+              <td><Check style={{color: 'red'}} /> </td>
+            </tr>
+
+            <tr>
+              <td>Assurance protection des achats</td>
+              <td><Close style={{color: 'silver', fontWeight: '700'}} /> </td>
+              <td><Check style={{color: 'red'}} /> </td>
+            </tr>
+
+            <tr>
+              <td>Assurances voyage (retard, annulation, etc)</td>
+              <td><Close style={{color: 'silver', fontWeight: '700'}} /> </td>
+              <td><Check style={{color: 'red'}} /> </td>
+            </tr>
+
+            <tr>
+              <td>Garantie véhicule de location</td>
+              <td><Close style={{color: 'silver', fontWeight: '700'}} /> </td>
+              <td><Check style={{color: 'red'}} /> </td>
+            </tr>
+
+            <tr>
+              <td>Garantie neige et montagne</td>
+              <td><Close style={{color: 'silver', fontWeight: '700'}} /> </td>
+              <td><Check style={{color: 'red'}} /> </td>
             </tr>
           </tbody>
         </table>

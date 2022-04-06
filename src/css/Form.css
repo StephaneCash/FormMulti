@@ -193,6 +193,22 @@ video {
     margin-top: 5px !important;
 }
 
+.thead{
+    border-bottom: 1px solid silver !important;
+}
+
+table{  
+    margin-top: 25px;
+}
+
+tbody tr td{
+    padding: 15px 0px !important;
+}
+
+.thead  tr th{
+    font-size: 22px !important;
+}
+
 .choixCarte{
     padding: 8px 0 !important;
     background-color: red !important;
