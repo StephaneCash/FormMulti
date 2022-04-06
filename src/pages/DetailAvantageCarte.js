@@ -15,13 +15,13 @@ function DetailAvantageCarte() {
             <div className="d-flex">
               <div className="col-4">
                 <div className="col-12">
-                  <img src={standardCard} className="imageCardStandard" />
+                  <img src={standardCard} className="imageAvantages" />
                 </div>
                 <div className="col-12">
-                  <h4>Carte Standard</h4>
-                  <div>
-                    0<Euro style={{ fontSize: '15px' }} />/mois
-                  </div>
+                  <h4 className="mt-2">Carte Standard</h4>
+
+                  <h5 className="textAvantages">0 <Euro 
+                    style={{ fontSize: '20px', fontWeight: 'lighter', color: '#333',marginTop:'-3px'}} />/mois</h5>
 
                   <div className="choixCarte">
                     <h6 className="text-center">Choisir cette <br />carte</h6>
@@ -29,7 +29,7 @@ function DetailAvantageCarte() {
                 </div>
               </div>
               <div className="col-4">
-                <img src={prenium} className="imageCardStandard" />
+                <img src={prenium} className="imageAvantages" />
               </div>
             </div>
           </div>

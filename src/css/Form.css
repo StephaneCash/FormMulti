@@ -229,6 +229,19 @@ video {
     align-self: flex-start;
 }
 
+.textAvantages{
+    font-weight: lighter !important;
+}
+
+.imageAvantages{
+    border-radius: 5px !important;
+    box-shadow: 2px 2px 8px silver;
+    max-width: 40%;
+    min-height: auto !important;
+    position: relative;
+    align-self: flex-start;
+}
+
 .textBtn{
     text-transform: lowercase !important;
 }
