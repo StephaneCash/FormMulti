@@ -18,6 +18,8 @@ function DetailAvantageCarte() {
                 </div>
                 <div className="col-12">
                   Carte Standard
+                  <span style={{ fontSize: '30px' }}>0</span>
+                    <div className="col-6 numberPrenium"><Euro style={{ fontSize: '15px' }} />/mois</div>
                 </div>
               </div>
               <div className="col-4">
