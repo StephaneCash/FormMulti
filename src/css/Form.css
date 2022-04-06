@@ -194,11 +194,17 @@ video {
 }
 
 .choixCarte{
-    padding: 10px !important;
+    padding: 8px 0 !important;
     background-color: red !important;
     color: #fff;
     border-radius: 7px;
     font-weight: bold !important;
+    max-width:83%;
+}
+
+.colonne2{
+    width: 80% !important;
+    margin: auto 10%  !important;
 }
 
 .bodyCard1{
