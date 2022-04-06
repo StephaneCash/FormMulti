@@ -203,7 +203,7 @@ table{
 
 .thArrow .css-i4bv87-MuiSvgIcon-root{
     font-size: 2rem !important;
-    transition: 0.9s !important;
+    transition: top 0.9s !important;
     cursor: pointer;
 }
 

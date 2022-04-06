@@ -2,10 +2,15 @@ import { Check, Close, KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-mat
 import React, { useState } from 'react';
 import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
+import "../css/DetailAvantageCarte.css"
 
 function DetailAvantageCarte() {
 
   const [arrow, setArrow] = useState(true);
+
+  const arrowChange = () => {
+    setArrow(!arrow);
+  }
 
   return (
     <div className="col-12">
@@ -61,51 +66,51 @@ function DetailAvantageCarte() {
           </thead>
           <tbody>
             <tr>
-              <td>Assurance protection des achats</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Assurance protection des achats</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
 
             <tr>
-              <td>Assurance protection des achats</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Assurance protection des achats</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
 
             <tr>
-              <td>Assurances voyage (retard, annulation, etc)</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Assurances voyage (retard, annulation, etc)</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className='td3'><Check style={{ color: 'red' }} /> </td>
             </tr>
 
             <tr>
-              <td>Garantie véhicule de location</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Garantie véhicule de location</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
 
             <tr>
-              <td>Garantie neige et montagne</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Garantie neige et montagne</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
 
             <tr>
-              <td>Paiements et retraits dans le monde</td>
-              <td><h4>Payant</h4> </td>
-              <td><h4 style={{ color: 'red' }}>Gratuit</h4> </td>
+              <td className="td1">Paiements et retraits dans le monde</td>
+              <td className="td2"><h4>Payant</h4> </td>
+              <td className="td3"><h4 style={{ color: 'red' }}>Gratuit</h4> </td>
             </tr>
 
             <tr>
-              <td>Assistance rapatriement</td>
-              <td><h4>Jusqu’à 11 000€</h4> </td>
-              <td><h4 style={{ color: 'red' }}>Jusqu’à 155 000€</h4> </td>
+              <td className="td1">Assistance rapatriement</td>
+              <td className="td2"><h4>Jusqu’à 11 000€</h4> </td>
+              <td className="td3"><h4 style={{ color: 'red' }}>Jusqu’à 155 000€</h4> </td>
             </tr>
 
             <tr>
-              <td>Renvoi de la carte en urgence où que vous soyez</td>
-              <td><h4>70 €</h4> </td>
-              <td><h4 style={{ color: 'red' }}>Gratuit</h4> </td>
+              <td className="td1">Renvoi de la carte en urgence où que vous soyez</td>
+              <td className="td2"><h4>70 €</h4> </td>
+              <td className="td3"><h4 style={{ color: 'red' }}>Gratuit</h4> </td>
             </tr>
           </tbody>
         </table>
@@ -120,21 +125,21 @@ function DetailAvantageCarte() {
           </thead>
           <tbody>
             <tr>
-              <td>Débit différé</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Débit différé</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
 
             <tr>
-              <td>Débit immédiat</td>
-              <td><Check style={{ color: 'red' }} /></td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Débit immédiat</td>
+              <td className="td2"><Check style={{ color: 'red' }} /></td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
 
             <tr>
-              <td>5% remboursés sur vos achats et vos factures Orange</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">5% remboursés sur vos achats et vos factures Orange</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
 
           </tbody>
@@ -150,9 +155,9 @@ function DetailAvantageCarte() {
           </thead>
           <tbody>
             <tr>
-              <td>Accès prioritaire au service client en cas de besoin</td>
-              <td><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
-              <td><Check style={{ color: 'red' }} /> </td>
+              <td className="td1">Accès prioritaire au service client en cas de besoin</td>
+              <td className="td2"><Close style={{ color: 'silver', fontWeight: '700' }} /> </td>
+              <td className="td3"><Check style={{ color: 'red' }} /> </td>
             </tr>
           </tbody>
         </table>
@@ -163,8 +168,8 @@ function DetailAvantageCarte() {
               <th>Fonctionnalités communes</th>
               <th></th>
               <th className='thArrow'>
-                {arrow ? <KeyboardArrowDown onClick={() => setArrow(!arrow)} /> :
-                  <KeyboardArrowUp onClick={() => setArrow(!arrow)} />}
+                {arrow ? <KeyboardArrowDown onClick={arrowChange} /> :
+                  <KeyboardArrowUp onClick={arrowChange} />}
               </th>
             </tr>
           </thead>
@@ -173,33 +178,33 @@ function DetailAvantageCarte() {
             {!arrow ?
               <>
                 <tr>
-                  <td>Actualisation du solde de votre compte en temps réel</td>
-                  <td><Check style={{ color: 'black' }} /></td>
-                  <td><Check style={{ color: 'black' }} /> </td>
+                  <td className="td1">Actualisation du solde de votre compte en temps réel</td>
+                  <td className="td2"><Check style={{ color: 'black' }} /></td>
+                  <td className="td3"><Check style={{ color: 'black' }} /> </td>
                 </tr>
 
                 <tr>
-                  <td>Blocage/déblocage de la carte et des options de paiement</td>
-                  <td><Check style={{ color: 'black' }} /></td>
-                  <td><Check style={{ color: 'black' }} /> </td>
+                  <td className="td1">Blocage/déblocage de la carte et des options de paiement</td>
+                  <td className="td2"><Check style={{ color: 'black' }} /></td>
+                  <td className="td3"><Check style={{ color: 'black' }} /> </td>
                 </tr>
 
                 <tr>
-                  <td>Personnalisation dans l'App du code secret de la carte</td>
-                  <td><Check style={{ color: 'black' }} /></td>
-                  <td><Check style={{ color: 'black' }} /> </td>
+                  <td className="td1">Personnalisation dans l'App du code secret de la carte</td>
+                  <td className="td2"><Check style={{ color: 'black' }} /></td>
+                  <td className="td3"><Check style={{ color: 'black' }} /> </td>
                 </tr>
 
                 <tr>
-                  <td>Notification lors de vos paiements</td>
-                  <td><Check style={{ color: 'black' }} /></td>
-                  <td><Check style={{ color: 'black' }} /> </td>
+                  <td className="td1">Notification lors de vos paiements</td>
+                  <td className="td2"><Check style={{ color: 'black' }} /></td>
+                  <td className="td3"><Check style={{ color: 'black' }} /> </td>
                 </tr>
 
                 <tr>
-                  <td>Accès au paiement mobile et sans contact</td>
-                  <td><Check style={{ color: 'black' }} /></td>
-                  <td><Check style={{ color: 'black' }} /> </td>
+                  <td className="td1">Accès au paiement mobile et sans contact</td>
+                  <td className="td2"><Check style={{ color: 'black' }} /></td>
+                  <td className="td3"><Check style={{ color: 'black' }} /> </td>
                 </tr>
               </>
 
