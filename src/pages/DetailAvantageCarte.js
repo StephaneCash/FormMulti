@@ -165,9 +165,9 @@ function DetailAvantageCarte() {
         <table className="table table-borderless trLastTbody">
           <thead className="thead">
             <tr>
-              <th>Fonctionnalités communes</th>
-              <th></th>
-              <th className='thArrow'>
+              <th className="td1">Fonctionnalités communes</th>
+              <th className="td21"></th>
+              <th className='thArrow td31'>
                 {arrow ? <KeyboardArrowDown onClick={arrowChange} /> :
                   <KeyboardArrowUp onClick={arrowChange} />}
               </th>
