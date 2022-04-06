@@ -1,3 +1,4 @@
+import { Euro } from '@mui/icons-material';
 import React from 'react';
 import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
@@ -18,8 +19,13 @@ function DetailAvantageCarte() {
                 </div>
                 <div className="col-12">
                   Carte Standard
-                  <span style={{ fontSize: '30px' }}>0</span>
-                    <div className="col-6 numberPrenium"><Euro style={{ fontSize: '15px' }} />/mois</div>
+                  <div>
+                    0<Euro style={{ fontSize: '15px' }} />/mois
+                  </div>
+
+                  <div className="choixCarte">
+                    <h5>Choisir cette carte</h5>
+                  </div>
                 </div>
               </div>
               <div className="col-4">

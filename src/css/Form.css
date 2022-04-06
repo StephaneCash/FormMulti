@@ -193,6 +193,12 @@ video {
     margin-top: 5px !important;
 }
 
+.choixCarte{
+    padding: 10px !important;
+    background-color: red !important;
+    color: #fff;
+}
+
 .bodyCard1{
     height: auto;
     margin-bottom: 13.4rem
