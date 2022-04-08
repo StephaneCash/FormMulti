@@ -360,6 +360,16 @@ tbody tr td{
     }
 }
 
+@media (max-width:488px){
+    .colOffre{
+        display: block !important;
+        margin: 0 auto;
+    }
+    .container-princial{
+        width: 100% !important;
+        margin: auto !important;
+    }
+}
 
 
 
