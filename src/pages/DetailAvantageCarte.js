@@ -15,6 +15,7 @@ function DetailAvantageCarte() {
 
   return (
     <div className="col-12">
+      
       <div className="btnRetour">
         <Link to="/"><KeyboardBackspace style={{marginTop: '-2px'}} /> Retour</Link>
       </div>
