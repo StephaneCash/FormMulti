@@ -347,6 +347,19 @@ tbody tr td{
     }
 }
 
+@media (max-width: 1000px){
+    .colPrincipal{
+        display: block !important;
+    }
+    .card1{
+        width: auto !important;
+    }
+    .card2{
+        width: auto !important;
+        margin-top: 10px !important;
+    }
+}
+
 
 
 

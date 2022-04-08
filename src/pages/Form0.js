@@ -19,7 +19,7 @@ function Form0() {
   return (
     <div className="container-princial">
       <div className="col-12">
-        <div className="row">
+        <div className="row colPrincipal">
 
           <div className="col-6 card1">
             <Card sx={{ maxWidth: 345 }} className="cardForm0">
@@ -83,7 +83,7 @@ function Form0() {
               
             </Card>
           </div>
-          <div className="col-6">
+          <div className="col-6 card2">
             <Card sx={{ maxWidth: 345 }} className="cardForm0">
               <div className="row">
                 <div className="col-4 col4">
@@ -102,11 +102,11 @@ function Form0() {
                 <div className="bodyCard2">
                   <div className="col-12">
                     <div className="col-12 offre18ans mt-4">
-                      <div className="row">
+                      <div className="row colOffre">
                         <div className="col-4">
                           <img src={offre18} />
                         </div>
-                        <div className="col-8">
+                        <div className="col-8 ">
                           Offre 18-25 ans : votre carte Premium à 4,99 €/mois pendant 1 an
                         </div>
                       </div>
