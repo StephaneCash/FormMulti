@@ -4,6 +4,8 @@ import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
 import "../css/DetailAvantageCarte.css"
 import { Link } from 'react-router-dom';
+import { Button, } from '@material-ui/core';
+
 
 function DetailAvantageCarte() {
 
@@ -16,17 +18,17 @@ function DetailAvantageCarte() {
   return (
     <div className="col-12">
       <div className="btnRetour">
-        <Link to="/"><KeyboardBackspace style={{marginTop: '-2px'}} /> Retour</Link>
+        <Link to="/"><KeyboardBackspace style={{ marginTop: '-2px' }} /> Retour</Link>
       </div>
 
       <h2 className="text-center mt-4">Comparer les cartes et leurs <br /> fonctionnalités</h2>
 
-      <div className="col-12 mt-5">
+      <div className="col-12 colP mt-5">
         <div className="row">
           <div className="col-6"></div>
-          <div className="col-6">
-            <div className="d-flex">
-              <div className="col-4">
+          <div className="col-6 col6Img">
+            <div className="d-flex colDflex">
+              <div className="col-4 col4Prenium">
                 <div className="col-12">
                   <img src={standardCard} className="imageAvantages" />
                 </div>
@@ -35,13 +37,13 @@ function DetailAvantageCarte() {
 
                   <h5 className="textAvantages">0 €/mois</h5>
 
-                  <div className="choixCarte">
-                    <h6 className="text-center">Choisir cette <br />carte</h6>
-                  </div>
+                  <Button variant='contained' className="btnCarteStandard">
+                      Choisir cette <br /> carte
+                    </Button>
                 </div>
               </div>
 
-              <div className="col-4" style={{ marginLeft: '15px' }}>
+              <div className="col-4 col4Prenium" style={{ marginLeft: '15px' }}>
                 <div className="col-12">
                   <img src={prenium} className="imageAvantages" />
                 </div>
@@ -50,8 +52,10 @@ function DetailAvantageCarte() {
 
                   <h5 className="textAvantages">7,99 €/mois</h5>
 
-                  <div className="choixCarte">
-                    <h6 className="text-center">Choisir cette <br />carte</h6>
+                  <div className="">
+                    <Button variant='contained' className="btnCarteStandard">
+                      Choisir cette <br /> carte
+                    </Button>
                   </div>
                 </div>
               </div>

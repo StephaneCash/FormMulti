@@ -22,3 +22,48 @@
     text-decoration: none !important;
     color: red !important;
 }
+
+@media (max-width: 1000px){
+    .col6Img{
+        width: auto !important;
+    }
+    .colP{
+        width: 80% !important;
+        margin: auto !important;
+    }
+    .col4Prenium{
+        width: auto !important;
+    }
+}
+
+@media (max-width: 680px){
+    .col6Img{
+        width: auto !important;
+    }
+    .colP{
+        width: 90% !important;
+        margin: auto !important;
+    }
+
+    .col4Prenium{
+        width: auto !important;
+    }
+}
+
+@media (max-width: 380px){
+    
+    .col4Prenium{
+        width: auto !important;
+        align-items: center !important;
+    }
+
+    .col6Img{
+        width: 100% !important;
+    }
+
+    .colDflex{
+        display: block !important;
+        text-align: center !important;
+        width: auto !important;
+    }
+}
