@@ -23,16 +23,24 @@
     color: red !important;
 }
 
+@media (max-width:1079px){
+    .textPre{
+    }
+}
+
 @media (max-width: 1000px){
     .col6Img{
         width: auto !important;
     }
     .colP{
-        width: 80% !important;
+        width: auto!important;
         margin: auto !important;
     }
     .col4Prenium{
         width: auto !important;
+    }
+    .textPre{
+        margin-top: 12px !important;
     }
 }
 
