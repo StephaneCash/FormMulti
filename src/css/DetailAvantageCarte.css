@@ -23,9 +23,31 @@
     color: red !important;
 }
 
+@media (max-width:1290px){
+    .rowCol6Princ{
+        width: 10% !important;
+    }
+
+    .col6Img{
+        width: auto !important;
+    }
+    .colP{
+        width: auto!important;
+        margin: auto !important;
+    }
+    .col4Prenium{
+        width: 70% !important;
+    }
+    .textPre{
+        margin-top: 0 !important;
+    }
+}
+
 @media (max-width:1079px){
     .textPre{
+        margin-top: 8px !important;
     }
+
 }
 
 @media (max-width: 1000px){
@@ -37,7 +59,7 @@
         margin: auto !important;
     }
     .col4Prenium{
-        width: auto !important;
+        width: 80% !important;
     }
     .textPre{
         margin-top: 12px !important;
@@ -54,7 +76,25 @@
     }
 
     .col4Prenium{
+        width: 65% !important;
+    }
+}
+
+@media (max-width:560px){
+    .col6Img{
         width: auto !important;
+    }
+    .colP{
+        width: 90% !important;
+        margin: auto !important;
+    }
+
+    .col4Prenium{
+        width: 45% !important;
+    }
+
+    .thead tr .textVoyage{
+        font-size: 15px !important;
     }
 }
 
@@ -62,15 +102,14 @@
     
     .col4Prenium{
         width: auto !important;
-        align-items: center !important;
+        margin-top: auto !important;
     }
 
     .col6Img{
-        width: 100% !important;
+        width: auto !important;
     }
 
     .colDflex{
-        text-align: center !important;
         width: auto !important;
     }
 
@@ -83,10 +122,6 @@
 
     .thead tr .textVoyage{
         font-size: 14px !important;
-    }
-
-    thead tr th .textVoyage{
-        width: 98% !important;
     }
 
     .colonne2{

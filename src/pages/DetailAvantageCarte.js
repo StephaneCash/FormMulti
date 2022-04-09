@@ -25,7 +25,7 @@ function DetailAvantageCarte() {
 
       <div className="col-12 colP mt-5">
         <div className="row">
-          <div className="col-6"></div>
+          <div className="col-6 rowCol6Princ"></div>
           <div className="col-6 col6Img">
             <div className="d-flex colDflex">
               <div className="col-4 col4Prenium">
@@ -47,7 +47,7 @@ function DetailAvantageCarte() {
                 <div className="col-12">
                   <img src={prenium} className="imageAvantages" />
                 </div>
-                <div className="col-12 textPre">
+                <div className="col-12 texPre">
                   <h4 className="mt-2">Carte Prenium</h4>
 
                   <h5 className="textAvantages">7,99 €/mois</h5>
