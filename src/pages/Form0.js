@@ -69,7 +69,7 @@ function Form0() {
                 <Button type="button"
                   className="btnCarteStandard"
                   onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}>
-                  C<span className="textBtn">hoisir la carte Standard</span> {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
+                  Choisir la carte Standard {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
 
@@ -170,7 +170,7 @@ function Form0() {
             style={{ backgroundColor: '#111b21', color: "#fff" }}
             onClick={() => setCurrentStep(2)}
           >
-            S<span className="textBtn">uivant</span>
+            Suivant
           </Button>
 
           :
