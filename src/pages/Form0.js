@@ -80,7 +80,7 @@ function Form0() {
                   </Link>
                 </div>
               </div>
-              
+
             </Card>
           </div>
           <div className="col-6 card2">
@@ -149,7 +149,7 @@ function Form0() {
                   className="btnCarteStandard"
                   onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_prenium' }, setEtatBtn(3)))}
                 >
-                  C<span className='textBtn'>hoisir la carte Prenium</span> {etatBtn === 3 ? <CheckCircleTwoTone /> : ''}
+                  Choisir la carte Prenium {etatBtn === 3 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
               <div className="text-center mt-3" style={{ color: 'red' }}>
@@ -166,6 +166,7 @@ function Form0() {
         {etatBtn === 2 || etatBtn === 3 ?
 
           <Button variant="contained"
+            className="btnSuivantForm0"
             style={{ backgroundColor: '#111b21', color: "#fff" }}
             onClick={() => setCurrentStep(2)}
           >
@@ -175,9 +176,10 @@ function Form0() {
           :
 
           <Button variant="contained"
+            className="btnSuivantForm0"
             disabled
           >
-            S<span className="textBtn">uivant</span>
+            Suivant
           </Button>
 
         }

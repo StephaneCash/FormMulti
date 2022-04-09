@@ -210,7 +210,7 @@ function Form1() {
                                         className='btn-confirm'
                                         style={{ float: "right", marginLeft: "10px" }}
                                     >
-                                        S<span className="textBtn">uivant</span>
+                                        Suivant
                                     </Button>
 
                                     <Button
@@ -218,7 +218,7 @@ function Form1() {
                                         className='btn-back'
                                         style={{ float: "right" }}
                                     >
-                                        R<span className="textBtn">etour</span>
+                                        Retour
                                     </Button>
                                 </div>
                             </div>
