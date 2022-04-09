@@ -62,8 +62,30 @@
     }
 
     .colDflex{
-        display: block !important;
         text-align: center !important;
         width: auto !important;
     }
+
+    .mt-21{
+        margin-top: 12px !important;
+    }
+    .col4PreniumClass2{
+        margin-top: 1.5rem;
+    }
+
+    .thead tr .textVoyage{
+        font-size: 14px !important;
+    }
+
+    thead tr th .textVoyage{
+        width: 98% !important;
+    }
+
+    .colonne2{
+    }
+
+    .tableClass{
+        
+    }
+
 }

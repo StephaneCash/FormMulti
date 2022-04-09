@@ -43,11 +43,11 @@ function DetailAvantageCarte() {
                 </div>
               </div>
 
-              <div className="col-4 col4Prenium" style={{ marginLeft: '15px' }}>
+              <div className="col-4 col4Prenium col4PreniumClass2" style={{ marginLeft: '15px' }}>
                 <div className="col-12">
                   <img src={prenium} className="imageAvantages" />
                 </div>
-                <div className="col-12">
+                <div className="col-12 textPre">
                   <h4 className="mt-2">Carte Prenium</h4>
 
                   <h5 className="textAvantages">7,99 €/mois</h5>
@@ -65,10 +65,10 @@ function DetailAvantageCarte() {
       </div>
 
       <div className="col-12 colonne2">
-        <table className="table table-borderless">
+        <table className="table tableClass table-borderless">
           <thead className="thead">
             <tr>
-              <th>voyages et assurances</th>
+              <th className="textVoyage">voyages et assurances</th>
               <th></th>
               <th></th>
             </tr>
