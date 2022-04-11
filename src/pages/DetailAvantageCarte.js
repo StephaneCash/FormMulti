@@ -261,7 +261,7 @@ function DetailAvantageCarte() {
           {btnChoice === 1 || btnChoice === 2 ?
             <Button variant="contained"
               id="BtnSuivant"
-              className="btnSuivantForm0 btnSuivantAvantages"
+              className="btnSuivantForm0 mt-3 btnSuivantAvantages"
               style={{ backgroundColor: '#111b21', color: "#fff", float: 'right' }}
 
               onClick={() => (setUserData({ ...userData, 'indiceData': 1000 }), setCurrentStep(2))}

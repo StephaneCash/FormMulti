@@ -73,7 +73,7 @@ function Form3() {
         if (isValidTypeDocument === false || isValidPhoto === false) {
             return false;
         } else {
-            setCurrentStep(4);
+            setCurrentStep(5);
             setUserData({ ...userData, "scroll": 5 })
         };
     };
