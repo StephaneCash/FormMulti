@@ -256,12 +256,12 @@ function DetailAvantageCarte() {
 
             </tbody>
           </table>
-        </div>
-        <div className="col-12">
+
+
           {btnChoice === 1 || btnChoice === 2 ?
             <Button variant="contained"
               id="BtnSuivant"
-              className="btnSuivantForm0 mt-2 mb-4"
+              className="btnSuivantForm0 btnSuivantAvantages"
               style={{ backgroundColor: '#111b21', color: "#fff", float: 'right' }}
 
               onClick={() => (setUserData({ ...userData, 'indiceData': 1000 }), setCurrentStep(2))}
@@ -270,6 +270,7 @@ function DetailAvantageCarte() {
             </Button> : ''
           }
         </div>
+
       </div>}
     </>
   )

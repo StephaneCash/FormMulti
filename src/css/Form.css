@@ -375,6 +375,12 @@ tbody tr td{
         width: 88% !important;
     }
 
+    .btnSuivantAvantages{
+        margin: 10px auto !important;
+        width: 100% !important;
+
+    }
+
     .cardForm0{
         border: 0px solid #fff !important;
         box-shadow: none !important;
