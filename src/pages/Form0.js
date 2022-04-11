@@ -25,9 +25,11 @@ function Form0() {
       if (userData.choixCarte === "carte_prenium") {
         setEtatBtn(3)
         setUserData({ ...useForceUpdate, 'choixCarte': "carte_prenium" })
+        setUserData({...userData});
       } else if (userData.choixCarte === "carte_standard") {
         setEtatBtn(2);
-        setUserData({ ...useForceUpdate, 'choixCarte': "carte_standard" })
+        setUserData({ ...useForceUpdate, 'choixCarte': "carte_standard" });
+        setUserData({...userData});
       }
     }
   }, [userData.indiceData, userData.choixCarte])
