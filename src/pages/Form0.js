@@ -7,6 +7,7 @@ import standardCard from "../images/standardCard.png";
 import offre18 from "../images/offre18.png";
 import { Link } from 'react-router-dom';
 import { useForceUpdate } from 'framer-motion';
+import { HashLink as Links } from 'react-router-hash-link';
 
 
 function Form0() {
@@ -71,18 +72,20 @@ function Form0() {
               </div>
 
               <div className="col-12">
-                <Button type="button"
-                  className="btnCarteStandard"
+                <Links to={{ hash: "#BtnSuivant1", }} style={{ textDecoration: "none" }}>
+                  <Button type="button"
+                    className="btnCarteStandard"
 
-                  onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}
-                >
-                  Choisir la carte Standard {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
-                </Button>
+                    onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}
+                  >
+                    Choisir la carte Standard {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
+                  </Button>
+                </Links>
               </div>
 
               <div className="col-12">
                 <div className="text-center mt-3" style={{ color: 'red' }}>
-                  <Link to='/avantages' className='linkAvantages'>
+                  <Link to='/avantages' state="form" className='linkAvantages'>
                     Découvrir tous les avantages
                   </Link>
                 </div>
@@ -151,22 +154,19 @@ function Form0() {
                 </div>
               </div>
               <div className="col-12">
-                <Button
-                  type="button"
-                  className="btnCarteStandard"
-                  onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_prenium' }, setEtatBtn(3)))}
-                >
-                  Choisir la carte Prenium {etatBtn === 3 ? <CheckCircleTwoTone /> : ''}
-                </Button>
+                <Links to={{ hash: "#BtnSuivant1", }} style={{ textDecoration: "none" }}>
+                  <Button
+                    type="button"
+                    className="btnCarteStandard"
+                    onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_prenium' }, setEtatBtn(3)))}
+                  >
+                    Choisir la carte Prenium {etatBtn === 3 ? <CheckCircleTwoTone /> : ''}
+                  </Button>
+                </Links>
               </div>
               <div className="text-center mt-3" style={{ color: 'red' }}>
                 <Link
-                  to={
-                    {
-                      pathname: "/avantages",
-                      state: 'form0'
-                    }
-                  }
+                  to="/avantages" state="form"
                   className='linkAvantages'>
                   Découvrir tous les avantages
                 </Link>
@@ -180,6 +180,7 @@ function Form0() {
         {etatBtn === 2 || etatBtn === 3 ?
 
           <Button variant="contained"
+            id="BtnSuivant1"
             className="btnSuivantForm0"
             style={{ backgroundColor: '#111b21', color: "#fff" }}
             onClick={() => setCurrentStep(2)}

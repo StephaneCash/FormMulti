@@ -3,10 +3,10 @@ import React, { useState, useEffect, useContext } from 'react';
 import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
 import "../css/DetailAvantageCarte.css"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { multiStepContext } from "../StepContext";
 import { Button, } from '@material-ui/core';
-
+import { HashLink as Links } from 'react-router-hash-link';
 
 function DetailAvantageCarte() {
 
@@ -14,6 +14,9 @@ function DetailAvantageCarte() {
   const [btnChoice, setBtnChoice] = useState(0);
 
   let navigate = useNavigate();
+  let location = useLocation();
+
+  console.log('Location :: ', location);
 
   const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
 
@@ -21,13 +24,17 @@ function DetailAvantageCarte() {
     setArrow(!arrow);
   }
 
-  console.log(userData)
+  //console.log(userData)
 
   useEffect(() => {
     if (userData.indiceData === 10) {
-      setTimeout(()=>{
+      setTimeout(() => {
         navigate('/')
       }, [0])
+    }
+
+    if (location.state) {
+      return window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [userData.indiceData]);
 
@@ -54,12 +61,14 @@ function DetailAvantageCarte() {
 
                     <h5 className="textAvantages">0 €/mois</h5>
 
-                    <Button variant='contained'
-                      className="btnCarteStandard"
-                      onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_standard' }), setBtnChoice(2))}
-                    >
-                      Choisir cette <br /> carte {btnChoice === 2 && <CheckCircleTwoTone />}
-                    </Button>
+                    <Links to={{ hash: "#BtnSuivant", }} style={{ textDecoration: "none" }}>
+                      <Button variant='contained'
+                        className="btnCarteStandard"
+                        onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_standard' }), setBtnChoice(2))}
+                      >
+                        Choisir cette <br /> carte {btnChoice === 2 && <CheckCircleTwoTone />}
+                      </Button>
+                    </Links>
                   </div>
                 </div>
 
@@ -73,12 +82,14 @@ function DetailAvantageCarte() {
                     <h5 className="textAvantages">7,99 €/mois</h5>
 
                     <div className="">
-                      <Button variant='contained'
-                        className="btnCarteStandard"
-                        onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_prenium' }), setBtnChoice(1))}
-                      >
-                        Choisir cette <br /> carte {btnChoice === 1 && <CheckCircleTwoTone />}
-                      </Button>
+                      <Links to={{ hash: "#BtnSuivant", }} style={{ textDecoration: "none" }}>
+                        <Button variant='contained'
+                          className="btnCarteStandard"
+                          onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_prenium' }), setBtnChoice(1))}
+                        >
+                          Choisir cette <br /> carte {btnChoice === 1 && <CheckCircleTwoTone />}
+                        </Button>
+                      </Links>
                     </div>
                   </div>
                 </div>
@@ -249,8 +260,10 @@ function DetailAvantageCarte() {
         <div className="col-12">
           {btnChoice === 1 || btnChoice === 2 ?
             <Button variant="contained"
+              id="BtnSuivant"
               className="btnSuivantForm0 mt-2 mb-4"
               style={{ backgroundColor: '#111b21', color: "#fff", float: 'right' }}
+
               onClick={() => (setUserData({ ...userData, 'indiceData': 1000 }), setCurrentStep(2))}
             >
               Suivant
