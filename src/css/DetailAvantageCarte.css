@@ -94,7 +94,7 @@
     }
 
     .thead tr .textVoyage{
-        font-size: 15px !important;
+        display: none !important;
     }
 }
 
@@ -131,4 +131,15 @@
         
     }
 
+}
+
+@media (max-width:370px){
+    .colDflex{
+        display: block !important;
+        margin: auto !important;
+    }
+
+    .col4PreniumClass2{
+        margin-top: 1rem !important;
+    }
 }

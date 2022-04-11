@@ -24,7 +24,7 @@ function DetailAvantageCarte() {
       <h2 className="text-center mt-4">Comparer les cartes et leurs <br /> fonctionnalités</h2>
 
       <div className="col-12 colP mt-5">
-        <div className="row">
+        <div className="row rowPrincImages">
           <div className="col-6 rowCol6Princ"></div>
           <div className="col-6 col6Img">
             <div className="d-flex colDflex">
@@ -68,7 +68,7 @@ function DetailAvantageCarte() {
         <table className="table tableClass table-borderless">
           <thead className="thead">
             <tr>
-              <th className="textVoyage">voyages et assurances</th>
+              <th>voyages <span className="textVoyage">et assurances</span> </th>
               <th></th>
               <th></th>
             </tr>

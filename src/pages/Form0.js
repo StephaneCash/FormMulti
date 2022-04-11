@@ -68,7 +68,9 @@ function Form0() {
               <div className="col-12">
                 <Button type="button"
                   className="btnCarteStandard"
-                  onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}>
+                  
+                  onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}
+                  >
                   Choisir la carte Standard {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
