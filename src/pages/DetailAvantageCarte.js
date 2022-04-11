@@ -16,8 +16,6 @@ function DetailAvantageCarte() {
   let navigate = useNavigate();
   let location = useLocation();
 
-  console.log('Location :: ', location);
-
   const { setCurrentStep, userData, setUserData } = useContext(multiStepContext);
 
   const arrowChange = () => {
@@ -37,6 +35,8 @@ function DetailAvantageCarte() {
       return window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [userData.indiceData]);
+
+  console.log("DEPUIS DETAIL ::: ", userData)
 
   return (
     <>

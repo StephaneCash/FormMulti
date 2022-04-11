@@ -91,7 +91,7 @@ function Form1() {
         };
     }, [userData.nom, userData.postnom, userData.lieuDeNaissance, userData.sexe, userData.dateDeNaissance, userData.scroll]);
 
-    console.log(userData)
+    console.log("DEPUIS FORM1 ::: ", userData)
 
     return (
         <>

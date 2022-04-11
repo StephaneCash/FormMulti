@@ -21,14 +21,18 @@ function Form0() {
       setUserData({ ...useForceUpdate, 'indiceData': 1000 })
     }
 
-    if(userData.choixCarte){
-      if(userData.choixCarte === "carte_prenium"){
+    if (userData.choixCarte) {
+      if (userData.choixCarte === "carte_prenium") {
         setEtatBtn(3)
-      }else if(userData.choixCarte === "Carte_standard"){
-        setEtatBtn(2)
+        setUserData({ ...useForceUpdate, 'choixCarte': "carte_prenium" })
+      } else if (userData.choixCarte === "carte_standard") {
+        setEtatBtn(2);
+        setUserData({ ...useForceUpdate, 'choixCarte': "carte_standard" })
       }
     }
   }, [userData.indiceData, userData.choixCarte])
+
+  console.log("DEPUIS FORM0 ::: ", userData)
 
   return (
     <div className="container-princial">
@@ -84,7 +88,7 @@ function Form0() {
                   <Button type="button"
                     className="btnCarteStandard"
 
-                    onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}
+                    onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_standard' }), setEtatBtn(2))}
                   >
                     Choisir la carte Standard {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
                   </Button>

@@ -196,7 +196,7 @@ function Form3() {
                             </Button>
                             <Button
                                 className='mb-3 btn-back'
-                                onClick={() => (setCurrentStep(2), setUserData({ ...userData, 'scroll': 4 }))}
+                                onClick={() => (setCurrentStep(3), setUserData({ ...userData, 'scroll': 4 }))}
                                 style={{ marginLeft: "10px", float: "right" }}
                             >
                                 Retour
