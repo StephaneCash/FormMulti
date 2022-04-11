@@ -45,7 +45,7 @@ function DetailAvantageCarte() {
           <Link to="/"><KeyboardBackspace style={{ marginTop: '-2px' }} /> Retour</Link>
         </div>
 
-        <h2 className="text-center mt-4">Comparer les cartes et leurs <br /> fonctionnalités</h2>
+        <h2 className="text-center h2text mt-4">Comparer les cartes et leurs <br /> fonctionnalités</h2>
 
         <div className="col-12 colP mt-5">
           <div className="row rowPrincImages">

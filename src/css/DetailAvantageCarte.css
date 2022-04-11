@@ -123,6 +123,10 @@
         font-size: 14px !important;
     }
 
+    .h2text{
+        font-size: 18px !important;
+    }
+
 }
 
 @media (max-width:378px){
