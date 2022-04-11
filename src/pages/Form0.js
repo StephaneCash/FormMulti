@@ -20,7 +20,11 @@ function Form0() {
     if (userData.indiceData === 10) {
       setUserData({ ...useForceUpdate, 'indiceData': 1000 })
     }
-  }, [userData.indiceData])
+
+    if(userData.choixCarte){
+      setEtatBtn(2);
+    }
+  }, [userData.indiceData, userData.choixCarte])
 
   return (
     <div className="container-princial">

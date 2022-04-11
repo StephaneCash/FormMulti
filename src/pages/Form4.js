@@ -65,7 +65,7 @@ function Form4() {
             if (userData.password === confirmPass) {
                 console.log("Data submitted successfully");
                 setConfirmPassword("");
-                setCurrentStep(5);
+                setCurrentStep(6);
             } else {
                 console.log('Erreur ', isvalidPwd)
                 setConfirmPassword("Les deux mots de passe ne correspondent pas");
@@ -88,7 +88,7 @@ function Form4() {
         if (userData.scroll === 5) {
             return window.scrollTo({ top: 0, behavior: 'smooth' })
         }
-    }, [isvalidPwd]);
+    }, [userData.password, userData.typeCompte]);
     //console.log("Data user : ", userData);
 
     return (
