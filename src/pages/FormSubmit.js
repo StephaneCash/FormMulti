@@ -7,7 +7,9 @@ function FormSubmit() {
 
     const { userData } = useContext(multiStepContext);
 
-    toast.success("Vos informations ont été soumises avec succès");
+    if(userData){
+        toast.success("Vos informations ont été soumises avec succès");
+    }
 
     return (
         <div>
