@@ -22,7 +22,11 @@ function Form0() {
     }
 
     if(userData.choixCarte){
-      setEtatBtn(2);
+      if(userData.choixCarte === "carte_prenium"){
+        setEtatBtn(3)
+      }else if(userData.choixCarte === "Carte_standard"){
+        setEtatBtn(2)
+      }
     }
   }, [userData.indiceData, userData.choixCarte])
 
