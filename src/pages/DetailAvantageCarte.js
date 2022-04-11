@@ -63,7 +63,7 @@ function DetailAvantageCarte() {
 
                     <Links to={{ hash: "#BtnSuivant", }} style={{ textDecoration: "none" }}>
                       <Button variant='contained'
-                        className="btnCarteStandard"
+                        className="btnCarteStandard btnCommunChoiceCarte"
                         onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_standard' }), setBtnChoice(2))}
                       >
                         Choisir cette <br /> carte {btnChoice === 2 && <CheckCircleTwoTone />}
@@ -84,7 +84,7 @@ function DetailAvantageCarte() {
                     <div className="">
                       <Links to={{ hash: "#BtnSuivant", }} style={{ textDecoration: "none" }}>
                         <Button variant='contained'
-                          className="btnCarteStandard"
+                          className="btnCarteStandard btnCommunChoiceCarte"
                           onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_prenium' }), setBtnChoice(1))}
                         >
                           Choisir cette <br /> carte {btnChoice === 1 && <CheckCircleTwoTone />}
