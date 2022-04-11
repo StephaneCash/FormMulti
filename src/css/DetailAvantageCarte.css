@@ -90,7 +90,7 @@
     }
 
     .col4Prenium{
-        width: 45% !important;
+        width: 40% !important;
     }
 
     .thead tr .textVoyage{
@@ -101,7 +101,6 @@
 @media (max-width: 380px){
     
     .col4Prenium{
-        width: auto !important;
         margin-top: auto !important;
     }
 
@@ -124,22 +123,12 @@
         font-size: 14px !important;
     }
 
-    .colonne2{
-    }
-
-    .tableClass{
-        
-    }
-
 }
 
-@media (max-width:370px){
-    .colDflex{
-        display: block !important;
-        margin: auto !important;
-    }
-
+@media (max-width:378px){
+    
     .col4PreniumClass2{
         margin-top: 1rem !important;
     }
+
 }

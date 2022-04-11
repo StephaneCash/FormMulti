@@ -63,10 +63,10 @@ function DetailAvantageCarte() {
 
                     <Links to={{ hash: "#BtnSuivant", }} style={{ textDecoration: "none" }}>
                       <Button variant='contained'
-                        className="btnCarteStandard btnCommunChoiceCarte"
+                        className="btnCarteStandard"
                         onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_standard' }), setBtnChoice(2))}
                       >
-                        Choisir cette <br /> carte {btnChoice === 2 && <CheckCircleTwoTone />}
+                        Choisir cette <br /> carte  {btnChoice === 2 && <><br /><CheckCircleTwoTone /></>}
                       </Button>
                     </Links>
                   </div>
@@ -141,19 +141,19 @@ function DetailAvantageCarte() {
               <tr>
                 <td className="td1">Paiements et retraits dans le monde</td>
                 <td className="td2"><h4>Payant</h4> </td>
-                <td className="td3"><h4 style={{ color: 'red' }}>Gratuit</h4> </td>
+                <td className="td3"><h4 className="htext" style={{ color: 'red' }}>Gratuit</h4> </td>
               </tr>
 
               <tr>
                 <td className="td1">Assistance rapatriement</td>
                 <td className="td2"><h4>Jusqu’à 11 000€</h4> </td>
-                <td className="td3"><h4 style={{ color: 'red' }}>Jusqu’à 155 000€</h4> </td>
+                <td className="td3"><h4 className="htext" style={{ color: 'red' }}>Jusqu’à 155 000€</h4> </td>
               </tr>
 
               <tr>
                 <td className="td1">Renvoi de la carte en urgence où que vous soyez</td>
                 <td className="td2"><h4>70 €</h4> </td>
-                <td className="td3"><h4 style={{ color: 'red' }}>Gratuit</h4> </td>
+                <td className="td3"><h4 className="htext" style={{ color: 'red' }}>Gratuit</h4> </td>
               </tr>
             </tbody>
           </table>
