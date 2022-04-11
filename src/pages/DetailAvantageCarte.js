@@ -140,19 +140,19 @@ function DetailAvantageCarte() {
 
               <tr>
                 <td className="td1">Paiements et retraits dans le monde</td>
-                <td className="td2"><h4>Payant</h4> </td>
+                <td className="td2"><h4 className="htext2">Payant</h4> </td>
                 <td className="td3"><h4 className="htext" style={{ color: 'red' }}>Gratuit</h4> </td>
               </tr>
 
               <tr>
                 <td className="td1">Assistance rapatriement</td>
-                <td className="td2"><h4>Jusqu’à 11 000€</h4> </td>
+                <td className="td2"><h4 className="htext2">Jusqu’à 11 000€</h4> </td>
                 <td className="td3"><h4 className="htext" style={{ color: 'red' }}>Jusqu’à 155 000€</h4> </td>
               </tr>
 
               <tr>
                 <td className="td1">Renvoi de la carte en urgence où que vous soyez</td>
-                <td className="td2"><h4>70 €</h4> </td>
+                <td className="td2"><h4 className="htext2">70 €</h4> </td>
                 <td className="td3"><h4 className="htext" style={{ color: 'red' }}>Gratuit</h4> </td>
               </tr>
             </tbody>

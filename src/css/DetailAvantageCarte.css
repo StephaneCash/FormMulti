@@ -66,7 +66,7 @@
     }
 }
 
-@media (max-width: 680px){
+@media (max-width: 740px){
     .col6Img{
         width: auto !important;
     }
@@ -80,7 +80,7 @@
     }
 }
 
-@media (max-width:560px){
+@media (max-width: 660px){
     .col6Img{
         width: auto !important;
     }
@@ -129,6 +129,18 @@
     
     .col4PreniumClass2{
         margin-top: 1rem !important;
+    }
+
+    .htext, .htext2{
+        font-size: 15px !important;
+    }
+
+}
+
+@media (max-width:344px){
+    
+    .imageAvantages{
+        margin-top: -10px !important;
     }
 
 }
