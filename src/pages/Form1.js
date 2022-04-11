@@ -3,6 +3,7 @@ import { Button, TextField, Card } from "@material-ui/core";
 import "../css/Form.css";
 import { multiStepContext } from "../StepContext";
 import { Check } from '@mui/icons-material';
+import {Link} from "react-router-dom"
 
 
 function Form1() {
@@ -89,6 +90,8 @@ function Form1() {
             return window.scrollTo({ top: 0, behavior: 'smooth' })
         };
     }, [userData.nom, userData.postnom, userData.lieuDeNaissance, userData.sexe, userData.dateDeNaissance, userData.scroll]);
+
+    console.log(userData)
 
     return (
         <>
@@ -214,7 +217,7 @@ function Form1() {
                                     </Button>
 
                                     <Button
-                                        onClick={()=>setCurrentStep(1)}
+                                        onClick={()=>(setUserData({ ...userData, 'indiceData': 10 }), setCurrentStep(1))}
                                         className='btn-back'
                                         style={{ float: "right" }}
                                     >

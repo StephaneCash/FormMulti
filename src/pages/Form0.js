@@ -6,6 +6,7 @@ import prenium from "../images/prenium.png";
 import standardCard from "../images/standardCard.png";
 import offre18 from "../images/offre18.png";
 import { Link } from 'react-router-dom';
+import { useForceUpdate } from 'framer-motion';
 
 
 function Form0() {
@@ -14,7 +15,11 @@ function Form0() {
 
   const [etatBtn, setEtatBtn] = useState(1);
 
-  console.log("DATA ::: ", userData)
+  useEffect(() => {
+    if (userData.indiceData === 10) {
+      setUserData({ ...useForceUpdate, 'indiceData': 1000 })
+    }
+  }, [userData.indiceData])
 
   return (
     <div className="container-princial">
@@ -68,9 +73,9 @@ function Form0() {
               <div className="col-12">
                 <Button type="button"
                   className="btnCarteStandard"
-                  
+
                   onClick={() => (setUserData({ ...userData, 'choixCarte': 'Carte_standard' }), setEtatBtn(2))}
-                  >
+                >
                   Choisir la carte Standard {etatBtn === 2 ? <CheckCircleTwoTone /> : ''}
                 </Button>
               </div>
@@ -155,14 +160,21 @@ function Form0() {
                 </Button>
               </div>
               <div className="text-center mt-3" style={{ color: 'red' }}>
-                <Link to='/avantages' className='linkAvantages'>
+                <Link
+                  to={
+                    {
+                      pathname: "/avantages",
+                      state: 'form0'
+                    }
+                  }
+                  className='linkAvantages'>
                   Découvrir tous les avantages
                 </Link>
               </div>
             </Card>
           </div>
         </div>
-      </div>
+      </div >
       <div className="col-12 text-center mt-4 mb-4">
 
         {etatBtn === 2 || etatBtn === 3 ?
@@ -187,7 +199,7 @@ function Form0() {
         }
 
       </div>
-    </div>
+    </div >
   )
 }
 
