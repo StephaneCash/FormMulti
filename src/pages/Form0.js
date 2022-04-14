@@ -8,6 +8,7 @@ import offre18 from "../images/offre18.png";
 import { Link } from 'react-router-dom';
 import { useForceUpdate } from 'framer-motion';
 import { HashLink as Links } from 'react-router-hash-link';
+import CookieConsent from "react-cookie-consent";
 
 
 function Form0() {
@@ -25,11 +26,11 @@ function Form0() {
       if (userData.choixCarte === "carte_prenium") {
         setEtatBtn(3)
         setUserData({ ...useForceUpdate, 'choixCarte': "carte_prenium" })
-        setUserData({...userData});
+        setUserData({ ...userData });
       } else if (userData.choixCarte === "carte_standard") {
         setEtatBtn(2);
         setUserData({ ...useForceUpdate, 'choixCarte': "carte_standard" });
-        setUserData({...userData});
+        setUserData({ ...userData });
       }
     }
   }, [userData.indiceData, userData.choixCarte])
@@ -212,7 +213,11 @@ function Form0() {
           </Button>
 
         }
-
+        <CookieConsent
+          debug={true}
+        >
+          Ce site utilise de cookies
+        </CookieConsent>
       </div>
     </div >
   )
