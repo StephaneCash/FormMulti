@@ -54,7 +54,7 @@ function Form0() {
                     <span style={{ fontSize: '30px' }}>0 </span>
                     <div className="col-6 numberPrenium"> €/mois</div>
                   </div>
-                </div>
+                </div> 
               </div>
 
               <div className="col-12">
