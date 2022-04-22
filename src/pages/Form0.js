@@ -34,8 +34,6 @@ function Form0() {
     }
   }, [userData.indiceData, userData.choixCarte])
 
-  console.log("DEPUIS FORM0 ::: ", userData)
-
   return (
     <div className="container-princial">
       <div className="col-12">
