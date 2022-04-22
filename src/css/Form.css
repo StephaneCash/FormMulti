@@ -231,7 +231,11 @@ tbody tr td{
 
 .bodyCard1{
     height: auto;
-    margin-bottom: 13.4rem
+    margin-bottom: auto;
+}
+
+.dataFontWhite{
+    color: white;
 }
 
 .bodyCard2{

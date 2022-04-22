@@ -78,6 +78,35 @@ function Form0() {
                       <Check className="checkIcon" />
                       <div className="textInterne">Code secret de carte personnalisable</div>
                     </div>
+
+                    <div className="d-flex dataFontWhite">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
+                    <div className="d-flex dataFontWhite">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
+                    <div className="d-flex dataFontWhite">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
+                    <div className="d-flex dataFontWhite">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
+                    <div className="d-flex dataFontWhite">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
+                    <div className="d-flex dataFontWhite">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
+                    <div className="d-flex dataFontWhite">
+                      <Check className="checkIcon" />
+                      <div className="textInterne">Code secret de carte personnalisable</div>
+                    </div>
                   </div>
 
                 </div>
