@@ -56,13 +56,13 @@ function Form0() {
                   </div>
                 </div> 
               </div>
-     
+      
               <div className="col-12">
                 <div className="bodyCard1">
                   <h6 className="mt-4">Compte et carte Standard : <br />
                     l'indispensable de la banque mobile
                   </h6>
-
+ 
                   <div className="textStandard">
                     <div className="d-flex">
                       <Check className="checkIcon" />
