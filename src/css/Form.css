@@ -231,16 +231,20 @@ tbody tr td{
 
 .bodyCard1{
     height: auto;
-    margin-bottom: auto;
-}
-
-.dataFontWhite{
-    color: white;
+    margin-bottom: 45px;
 }
 
 .bodyCard2{
     height: auto;
     margin-bottom: 45px;
+}
+
+.cardForm0{
+    height: auto !important;
+}
+
+.linkAvnatages{
+    margin-top: 10.5rem !important;
 }
 
 .textStandard{
@@ -328,6 +332,9 @@ tbody tr td{
 
     .formB .MuiButton-root{
         margin: 12px 5px 0 0 !important;
+    }
+    .linkAvnatages{
+        margin-top: auto !important;
     }
 }
 
