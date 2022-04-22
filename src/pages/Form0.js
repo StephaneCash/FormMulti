@@ -33,7 +33,7 @@ function Form0() {
         setUserData({ ...userData });
       }
     }
-  }, [userData, setUserData])
+  }, [userData.indiceData, userData.choixCarte])
 
   return (
     <div className="container-princial">
@@ -79,35 +79,6 @@ function Form0() {
                       <Check className="checkIcon" />
                       <div className="textInterne">Code secret de carte personnalisable</div>
                     </div>
-
-                    <div className="d-flex dataFontWhite">
-                      <Check className="checkIcon" />
-                      <div className="textInterne">Code secret de carte personnalisable</div>
-                    </div>
-                    <div className="d-flex dataFontWhite">
-                      <Check className="checkIcon" />
-                      <div className="textInterne">Code secret de carte personnalisable</div>
-                    </div>
-                    <div className="d-flex dataFontWhite">
-                      <Check className="checkIcon" />
-                      <div className="textInterne">Code secret de carte personnalisable</div>
-                    </div>
-                    <div className="d-flex dataFontWhite">
-                      <Check className="checkIcon" />
-                      <div className="textInterne">Code secret de carte personnalisable</div>
-                    </div>
-                    <div className="d-flex dataFontWhite">
-                      <Check className="checkIcon" />
-                      <div className="textInterne">Code secret de carte personnalisable</div>
-                    </div>
-                    <div className="d-flex dataFontWhite">
-                      <Check className="checkIcon" />
-                      <div className="textInterne">Code secret de carte personnalisable</div>
-                    </div>
-                    <div className="d-flex dataFontWhite">
-                      <Check className="checkIcon" />
-                      <div className="textInterne">Code secret de carte personnalisable</div>
-                    </div>
                   </div>
 
                 </div>
@@ -116,7 +87,7 @@ function Form0() {
               <div className="col-12">
                 <Links to={{ hash: "#BtnSuivant1", }} style={{ textDecoration: "none" }}>
                   <Button type="button"
-                    className="btnCarteStandard"
+                    className="btnCarteStandard linkAvnatages"
 
                     onClick={() => (setUserData({ ...userData, 'choixCarte': 'carte_standard' }), setEtatBtn(2))}
                   >
@@ -127,7 +98,7 @@ function Form0() {
 
               <div className="col-12">
                 <div className="text-center mt-3" style={{ color: 'red' }}>
-                  <Link to='/avantages' state="form" className='linkAvantages'>
+                  <Link to='/avantages' state="form" className='linkAvantages '>
                     Découvrir tous les avantages
                   </Link>
                 </div>
