@@ -32,7 +32,7 @@ function Form0() {
         setUserData({...userData});
       }
     }
-  }, [userData.indiceData, userData.choixCarte])
+  }, [userData, setUserData])
 
   return (
     <div className="container-princial">
